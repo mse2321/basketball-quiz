@@ -22,6 +22,11 @@ $(document).ready(function () {
 		//shows the user there score
 	}
 
+	var questions = {
+		question: blah blah,
+		answers: this, this, this, this
+	}
+
 	function questions() {
 		var question1 = "this";
 		var question2 = "this";
