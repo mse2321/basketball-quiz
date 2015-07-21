@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 4em;
 }
 
 footer {
@@ -61,13 +61,22 @@ button:hover, button:focus {
 	display: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) and (max-width: 1200px) {
 	button {
 		display: block;
 		margin: 15px 0px 15px 15px;
 	}
-	#mobileC {
-		display: inline;
-		color: white;
+	h1 {
+		font-size: 2.2em;
+	}
+}
+
+@media screen and (max-width: 699px) {
+	button {
+		display: block;
+		margin: 15px 0px 15px 15px;
+	}
+	h1 {
+		font-size: 2.2em;
 	}
 }
