@@ -1,6 +1,6 @@
 body {
 	font-family: Arial, sans-serif;
-	background-color: navy;
+	background-color: #00001F;
 	color: white;
 	text-align: center;
 }
@@ -19,50 +19,55 @@ footer {
 	margin-top: 3em;
 	padding: 0px 30px;
 }
-#answers > span > div {
+
+#answers ul > li {
+	list-style-type: none;
+	line-height: 40px;
+	font-size: 24px;
+}
+
+#answers {
+	margin: 0 2em 0 0;
+}
+
+#answer-A, #answer-B, #answer-C, #answer-D {
+	margin-left: 0;
+}
+
+.answer button {
 	list-style-type: none;
 	display: inline;
 	font-size: 1.5em;
 	margin: 0em 8em;
 	padding: 5px 10px;
-}
-
-#answerC {
-	background-color: green;
-}
-
-#shot-clock {
-	border: 5px solid red;
-	background-color: black;
-	color: red;
-	font-size: 5em;
-	width: 130px;
-	height: 90px;
-	margin: 0 auto;
-}
-
-#shot-clock p {
-	margin-top: 0px;
-}
-
-br {
-	margin: 2em 0;
+	text-align: center;
 }
 
 button {
-	background-color: orange;
+	background-color: #FF9933;
 	border-radius: 100px;
 	width: 90px;
 	height: 90px;
 	border: none;
 	font-size: 3em;
-	margin: 2em;
+	margin: 1em 2em 1em 2em;
 	font-weight: bold;
 }
 button:hover, button:focus {
-	background-color: red;
+	background-color: #E65C00;
 }
 
 #intro, #score {
 	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	button {
+		display: block;
+		margin: 15px 0px 15px 15px;
+	}
+	#mobileC {
+		display: inline;
+		color: white;
+	}
 }
