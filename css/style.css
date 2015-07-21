@@ -62,12 +62,17 @@ button:hover, button:focus {
 	display: none;
 }
 
-section#score p{
+.scoreDisplay{
 	background-color: #666;
+	background-size: 0 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	width: 15%;
 	margin: 0 auto;
 	font-size: 4em;
 }
+
 
 section#score h3{
 	font-size: 1em;
