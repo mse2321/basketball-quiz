@@ -30,29 +30,57 @@ $(document).ready(function () {
 		answers: ["this", "this", "this", "this"]
 	}
 
-	var question1 = Object.create(questions);
+	function questionOne () {
+		var question1 = Object.create(questions);
 
-	question1.question = "";
-	question1.answer = ["this", "this", "this", "this"];
+		question1.question = "";
+		question1.answer = ["this1", "this1", "this1", "this1"];
+	}
 
-	var question2 = Object.create(questions);
+	function questionTwo () {
+		var question2 = Object.create(questions);
 
-	question2.question = "";
-	question2.answer = ["this", "this", "this", "this"];
+		question2.question = "";
+		question2.answer = ["this2", "this2", "this2", "this2"];
+	}
 
-	var question3 = Object.create(questions);
+	function questionThree () {
+		var question3 = Object.create(questions);
 
-	question3.question = "";
-	question3.answer = ["this", "this", "this", "this"];
+		question3.question = "";
+		question3.answer = ["this3", "this3", "this3", "this3"];
+	}
 
-	var question4 = Object.create(questions);
+	function questionFour () {
+		var question4 = Object.create(questions);
 
-	question4.question = "";
-	question4.answer = ["this", "this", "this", "this"];
+		question4.question = "";
+		question4.answer = ["this4", "this4", "this4", "this4"];
+	}
 
-	var question5 = Object.create(questions);
+	function questionFive () {
+		var question5 = Object.create(questions);
 
-	question5.question = "";
-	question5.answer = ["this", "this", "this", "this"];
+		question5.question = "";
+		question5.answer = ["this5", "this5", "this5", "this5"];
+	}
+
+	function progressMade() {
+		progress = "something"
+
+		if(progress === 0) {
+			alert("please answer a question.")
+		} else if (progress === 20) {
+			value = 20;
+		} else if (progress === 40) {
+			value = 40;
+		} else if (progress === 60) {
+			value = 60;
+		} else if (progress === 80) {
+			value = 80;
+		} else if (progress === 100) {
+			value = 100;
+		}
+	}
 
 });
