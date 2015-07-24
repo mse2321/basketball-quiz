@@ -79,6 +79,15 @@ section#score h3{
 	margin-bottom: .5em;
 }
 
+.rightAnswer {
+	color: green;
+	font-weight: bold;
+}
+
+.rightAnswerButton {
+	background-color: green;
+}
+
 @media screen and (min-width: 700px) and (max-width: 1200px) {
 	button {
 		display: block;

@@ -14,25 +14,27 @@ $(document).ready(function () {
 	$("#answerA").html(showAnswers);
 
 	// User Answer Handler
-	$("button").click(rightAnswerCheck);
+	$("button").click(UserAnswer);
 
 
-	function rightAnswerCheck() {
-		var answer = something;
+	function UserAnswer() {
+		var answer = $('#answers-list li').val();
+		var points = 0;
+		var progress = 0;
 
-		//determines the question is correct
-		if (answer === correctAnswer) {
-			//do this
-		} else {
-			//do this
+		function showRightAnswer() {
+
+			//highlights the correct answer
+			if (answer === correctAnswer) {
+				$("#answerC").addClass(".rightAnswer");
+				$("#answer-button-C").addClass(".rightAnswerButton");
+				points += points
+			}
 		}
-	}
 
-	function showScore() {
-		//shows the user there score
-		//var finalScore = score + points;
-		var finalScore = 100;
-		$("#actualScore").html(finalScore);
+		progress += 20;
+
+
 	}
 
 	function showQuestion() {
@@ -104,22 +106,29 @@ $(document).ready(function () {
 	}
 	
 
-	function progressMade() {
-		progress = numberOfAnswers;
+	function progressMade(progress) {
 
 		if(progress === 0) {
 			alert("please answer a question.")
 		} else if (progress === 20) {
-			value = 20;
+			$("progress").html("value = '20'");
 		} else if (progress === 40) {
-			value = 40;
+			$("progress").html("value = '40'");
 		} else if (progress === 60) {
-			value = 60;
+			$("progress").html("value = '60'");
 		} else if (progress === 80) {
-			value = 80;
+			$("progress").html("value = '80'");
 		} else if (progress === 100) {
-			value = 100;
+			$("progress").html("value = '100'");
+			showScore(progress);
 		}
+	}
+
+	function showScore(points) {
+		//shows the user there score
+		//var finalScore = score + points;
+		var finalScore = points;
+		$("#actualScore").html(finalScore);
 	}
 
 });
