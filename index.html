@@ -13,7 +13,11 @@
 		<h1>Basketball Quiz</h1>
 	</header>
 	<section id="intro">
-		<div class="container"></div>
+		<div class="container">
+			<h2>Get ready to take the quiz!</h2>
+			<p>See how much you know about the NBA. Click below to see how you do.</p>
+			<button id="quiz-start">Start</button>
+		</div>
 	</section>
 	<section id="quiz">
 		<div class="container">
@@ -30,16 +34,16 @@
 				</ul>
 			</div>
 			<div id="answersButtons">
-				<button id="answer-button-A">A</button>
-				<button id="answer-button-B">B</button>
-				<button id="answer-button-C">C</button>
-				<button id="answer-button-D">D</button>
+				<button id="answer-button-A" class="answerButton">A</button>
+				<button id="answer-button-B" class="answerButton">B</button>
+				<button id="answer-button-C" class="answerButton">C</button>
+				<button id="answer-button-D" class="answerButton">D</button>
+			</div>
+			<div id="score">
+				<h3>Your Score</h3>
+				<div class="container scoreDisplay" id="actualScore"></div>
 			</div>
 		</div>
-	</section>
-	<section id="score">
-		<h3>Your Score</h3>
-		<div class="container scoreDisplay" id="actualScore"></div>
 	</section>
 
 	<footer>

@@ -7,6 +7,13 @@ $(document).ready(function () {
 		correctAnswer: answers,
 	}
 
+	// Show intro section
+	$("#intro").show();
+	$("#quiz").hide();
+
+	// Starts the quiz
+	$("#quiz-start").click(showQuiz);
+
 	// Question Handler
 	$("#question").html(showQuestion);
 
@@ -16,6 +23,11 @@ $(document).ready(function () {
 	// User Answer Handler
 	$("button").click(UserAnswer);
 
+
+	function showQuiz() {
+		$("#intro").hide();
+		$("#quiz").show();
+	}
 
 	function UserAnswer() {
 		var answer = $('#answers-list li').val();
