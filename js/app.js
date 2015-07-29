@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-	var questions = {
+	/*var questions = {
 
 		question: "text",
 		answers: [],
 		correctAnswer: answers,
-	}
+	}*/
 
 	// Show intro section
 	$("#intro").show();
@@ -49,6 +49,8 @@ $(document).ready(function () {
 
 	}
 
+	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
+
 	function showQuestion() {
 
 		var quiz = [question1, question2, question3, question4, question5];
@@ -59,7 +61,7 @@ $(document).ready(function () {
 
 			question1.question = "Which of the teams below has not won more than 2 NBA Championship?";
 			question1.answers = ["Boston Celtics", "Los Angeles Lakers", "Orlando Magic", "Miami Heat"];
-			question1.correctAnswer = question1.answers[2];
+			question1.correct = question1.answers[2];
 
 			return question1;
 
@@ -69,7 +71,7 @@ $(document).ready(function () {
 		function questionTwo () {
 			var question2 = Object.create(questions);
 
-			question2.question = "";
+			question2.question = "test2";
 			question2.answers = ["this2", "this2", "this2", "this2"];
 			question2.correctAnswer = question2.answer[0];
 
@@ -81,7 +83,7 @@ $(document).ready(function () {
 		function questionThree () {
 			var question3 = Object.create(questions);
 
-			question3.question = "";
+			question3.question = "test3";
 			question3.answers = ["this3", "this3", "this3", "this3"];
 			question3.correctAnswer = question3.answer[0];
 
@@ -93,7 +95,7 @@ $(document).ready(function () {
 		function questionFour () {
 			var question4 = Object.create(questions);
 
-			question4.question = "";
+			question4.question = "test4";
 			question4.answers = ["this4", "this4", "this4", "this4"];
 			question4.correctAnswer = question4.answer[0];
 
@@ -105,7 +107,7 @@ $(document).ready(function () {
 		function questionFive () {
 			var question5 = Object.create(questions);
 
-			question5.question = "";
+			question5.question = "test5";
 			question5.answers = ["this5", "this5", "this5", "this5"];
 			question5.correctAnswer = question5.answer[0];
 
@@ -144,3 +146,38 @@ $(document).ready(function () {
 	}
 
 });
+
+
+/* $(function () {
+  var questions = [
+    {question:'What is your name?', correct: 'Marcus', answers:['Marcus', 'Agustin', 'Billy', 'Maya']},
+    {question:'What is your country?', correct: 'USA', answers:['USA', 'AR', 'UK', 'EU']}
+    ];
+    
+    var currentQuestion = 0;
+    
+    function showQuestion (index) {
+      $('#currentQuestion').html(index+1);
+      $('#question').html(questions[index].question);
+      questions[index].answers.forEach(function (item, index) {
+        $('#answer' + (index + 1)).attr('value', item);
+        $('#value' + (index + 1)).html(item);
+      });
+    }
+    
+    $('#questionAnswer').on('click', 'input[type="radio"]', function () {
+      if ( $(this)[0].value === questions[currentQuestion].correct){
+          console.log('You are rig
+    // Clean all input radio buttons
+    $('#questionAnswer')[0].reset();
+    currentQuestion += 1;
+    showQuestion(currentQuestion);ht buddy!');
+      }
+    });
+    
+    function init () {
+      showQuestion(0);
+    }
+    
+    init();
+}); */
