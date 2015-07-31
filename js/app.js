@@ -2,9 +2,10 @@ $(document).ready(function () {
 
 	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
 
-	// Show intro section
+	// Show intro section and score heading
 	$("#intro").show();
 	$("#quiz").hide();
+	$("#scoreTitle").hide();
 
 	// Starts the quiz
 	$("#quiz-start").click(showQuiz);
@@ -43,17 +44,18 @@ $(document).ready(function () {
 	      	if ( $(this)[0].value === questions[currentQuestion].correct){
 	          	points += 20;
 	          	progress += 20;
+	          	$("#result").html("Correct!");
 	        } else {
 	        	progress += 20;
+	        	$("#result").html("Wrong!");
 	        }
-
 			    // Clean all input radio buttons
 			    $('#questionAnswer')[0].reset();
 
 			    if (currentQuestion < 4) {
 			    	currentQuestion += 1;
 				} else {
-					currentQuestion = 5;
+					currentQuestion = 4;
 				}
 	    		progressMade(progress, points);
 	    		showQuestion(currentQuestion);
@@ -82,6 +84,7 @@ $(document).ready(function () {
 		function showScore() {
 			//shows the user there final score
 			var finalScore = points;
+			$("#scoreTitle").show();
 			$("#actualScore").html(finalScore);
 		}
 	    
