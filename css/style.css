@@ -35,7 +35,7 @@ footer {
 	padding: 0px 30px;
 }
 
-#answers ul > li {
+#answer {
 	list-style-type: none;
 	line-height: 40px;
 	font-size: 24px;

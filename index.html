@@ -21,24 +21,27 @@
 	</section>
 	<section id="quiz">
 		<div class="container">
-			<div id="progress">
-				 <progress value="0" max="100"></progress> 
-			</div>
-			<div id="question"></div>
-			<div id="answers">
-				<ul id="answers-list">
-					<li id="answerA"></li>
-					<li id="answerB"></li>
-					<li id="answerC"></li>
-					<li id="answerD"></li>
-				</ul>
-			</div>
-			<div id="answersButtons">
+			<progress id="progressBar" value="0" max="100"></progress> 
+
+			<h4 id="currentQuestion"><h4>
+			<p id="question"></p>
+
+
+			<form id="questionAnswer">
+				<input type="radio" id="answer1" name="answer">&nbsp;<span id='value1'></span>
+				<input type="radio" id="answer2" name="answer">&nbsp;<span id='value2'></span>
+				<input type="radio" id="answer3" name="answer">&nbsp;<span id='value3'></span>
+				<input type="radio" id="answer4" name="answer">&nbsp;<span id='value4'></span>
+  			</form>
+
+			<!-- <ul id="answers">
+			</ul>-->
+			<!-- <div id="answersButtons">
 				<button id="answer-button-A" class="answerButton">A</button>
 				<button id="answer-button-B" class="answerButton">B</button>
 				<button id="answer-button-C" class="answerButton">C</button>
 				<button id="answer-button-D" class="answerButton">D</button>
-			</div>
+			</div> -->
 			<div id="score">
 				<h3>Your Score</h3>
 				<div class="container scoreDisplay" id="actualScore"></div>
