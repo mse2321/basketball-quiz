@@ -3,12 +3,17 @@ $(document).ready(function () {
 	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
 
 	// Show intro section and score heading
-	$("#intro").show();
+	/* $("#intro").show();
 	$("#quiz").hide();
+	$("#scoreTitle").hide(); */
+
+	// for testing only
+	$("#intro").hide();
+	$("#quiz").show();
 	$("#scoreTitle").hide();
 
 	// Starts the quiz
-	$("#quiz-start").click(showQuiz);
+	//$("#quiz-start").click(showQuiz);
 
 	// Question Handler
 	$("#question").html(showQuestion);
@@ -20,18 +25,18 @@ $(document).ready(function () {
 
 	function showQuestion() {
 	  	var questions = [
-	    {question:'What is your name?', correct: 'Marcus', answers:['Marcus', 'Agustin', 'Billy', 'Maya']},
-	    {question:'What is your country?', correct: 'USA', answers:['USA', 'AR', 'UK', 'EU']},
-	    {question:'What is your state?', correct: 'MA', answers:['TX', 'MA', 'NC', 'CA']},
-	    {question:'What is your city?', correct: 'Acushnet', answers:['New Bedford', 'Fairhaven', 'Acushnet', 'Dartmouth']},
-	    {question:'What is your favorite color?', correct: 'Blue', answers:['Red', 'White', 'Green', 'Blue']}
+	    {question:'What is your name?', correct: 'A - Marcus', answers:['A - Marcus', 'B - Agustin', 'C - Billy', 'D - Maya']},
+	    {question:'What is your country?', correct: 'A - USA', answers:['A - USA', 'B - AR', 'C - UK', 'D - EU']},
+	    {question:'What is your state?', correct: 'B - MA', answers:['A - TX', 'B - MA', 'C - NC', 'D - CA']},
+	    {question:'What is your city?', correct: 'C - Acushnet', answers:['A - New Bedford', 'B - Fairhaven', 'C - Acushnet', 'D - Dartmouth']},
+	    {question:'What is your favorite color?', correct: 'D - Blue', answers:['A - Red', 'B - White', 'C - Green', 'D - Blue']}
 	    ];
 	    
 	    var currentQuestion = 0;
 	    var points = 0;
 		var progress = 0;
 	    
-	    function showQuestion (index) {
+	    function showQuestions (index) {
 	      $('#currentQuestion').html("Question " + (index + 1));
 	      $('#question').html(questions[index].question);
 	      questions[index].answers.forEach(function (item, index) {
@@ -40,7 +45,7 @@ $(document).ready(function () {
 	      });
 	    }
 	    
-	    $('#questionAnswer').on('click', 'input[type="radio"]', function () {
+	    $('#questionAnswers').on('click', 'button[name="answer"]', function () {
 	      	if ( $(this)[0].value === questions[currentQuestion].correct){
 	          	points += 20;
 	          	progress += 20;
@@ -49,8 +54,8 @@ $(document).ready(function () {
 	        	progress += 20;
 	        	$("#result").html("Wrong!");
 	        }
-			    // Clean all input radio buttons
-			    $('#questionAnswer')[0].reset();
+			    //Clean all input radio buttons
+			   //$('#questionAnswers')[0].reset();
 
 			    if (currentQuestion < 4) {
 			    	currentQuestion += 1;
@@ -58,11 +63,11 @@ $(document).ready(function () {
 					currentQuestion = 4;
 				}
 	    		progressMade(progress, points);
-	    		showQuestion(currentQuestion);
+	    		showQuestions(currentQuestion);
 	    });
 	    
 	    function init () {
-	      showQuestion(0);
+	      showQuestions(0);
 	    }
 	    
 	    function progressMade() {
@@ -88,6 +93,7 @@ $(document).ready(function () {
 			$("#actualScore").html(finalScore);
 		}
 	    
+
 	    init();
 	}
 
