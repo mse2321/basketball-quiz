@@ -3,17 +3,13 @@ $(document).ready(function () {
 	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
 
 	// Show intro section and score heading
-	/* $("#intro").show();
+	$("#intro").show();
 	$("#quiz").hide();
-	$("#scoreTitle").hide(); */
-
-	// for testing only
-	$("#intro").hide();
-	$("#quiz").show();
 	$("#scoreTitle").hide();
 
+
 	// Starts the quiz
-	//$("#quiz-start").click(showQuiz);
+	$("#quiz-start").click(showQuiz);
 
 	// Question Handler
 	$("#question").html(showQuestion);
@@ -25,11 +21,11 @@ $(document).ready(function () {
 
 	function showQuestion() {
 	  	var questions = [
-	    {question:'What is your name?', correct: 'A - Marcus', answers:['A - Marcus', 'B - Agustin', 'C - Billy', 'D - Maya']},
-	    {question:'What is your country?', correct: 'A - USA', answers:['A - USA', 'B - AR', 'C - UK', 'D - EU']},
-	    {question:'What is your state?', correct: 'B - MA', answers:['A - TX', 'B - MA', 'C - NC', 'D - CA']},
-	    {question:'What is your city?', correct: 'C - Acushnet', answers:['A - New Bedford', 'B - Fairhaven', 'C - Acushnet', 'D - Dartmouth']},
-	    {question:'What is your favorite color?', correct: 'D - Blue', answers:['A - Red', 'B - White', 'C - Green', 'D - Blue']}
+	    {question:'Which of this teams has NOT won an NBA Champion?', correct: 'A - Orlando Magic', answers:['A - Orlando Magic', 'B - Boston Celtics', 'C - Houston Rockets', 'D - Dallas Mavericks']},
+	    {question:'What NBA player was the sillouette for their logo?', correct: 'C - Jerry West', answers:['A - Wilt Chamberlain', 'B - Michael Jordan', 'C - Jerry West', 'D - Julius Erving']},
+	    {question:'What company makes the official NBA basketball?', correct: 'B - Spalding', answers:['A - Champion', 'B - Spalding', 'C - Nike', 'D - Franklin Sports']},
+	    {question:'What NBA team plays their games in Chicago?', correct: 'C - Bulls', answers:['A - Kings', 'B - Bucks', 'C - Bulls', 'D - Pistons']},
+	    {question:'Which team has won the most NBA Championships?', correct: 'D - Boston Celtics', answers:['A - Los Angeles Lakers', 'B - San Antonio Spurs', 'C - New York Knicks', 'D - Boston Celtics']}
 	    ];
 	    
 	    var currentQuestion = 0;
