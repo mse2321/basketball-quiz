@@ -41,7 +41,14 @@ $(document).ready(function () {
 	      $('#question').html(questions[index].question);
 	      questions[index].answers.forEach(function (item, index) {
 	        $('#answer' + (index + 1)).attr('value', item);
-	        $('#value' + (index + 1)).html(item);
+	        if(($(window).width()) < "700") {
+		        $('button#answer' + (index + 1)).html(item);
+		        $('ul#answers').hide();
+		        $('span#value' + (index + 1)).append("<br />");
+	    	} else {
+	    		$('li#value' + (index + 1)).html(item);
+		        $('.mobileAnswers').hide();
+	    	}
 	      });
 	    }
 	    

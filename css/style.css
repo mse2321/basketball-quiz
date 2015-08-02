@@ -40,7 +40,6 @@ ul {
 
 #question {
 	font-size: 1.2em;
-	margin-bottom: 3em;
 	margin-top: 3em;
 	padding: 0px 30px;
 }
@@ -65,7 +64,7 @@ ul {
 	font-weight: bold;
 }
 
-.answerButton:hover, .answerButton:focus {
+.answerButton:hover {
 	background-color: #E65C00;
 }
 
@@ -108,6 +107,7 @@ section#score h3{
 	margin-top: 2em;
 }
 
+
 @media screen and (min-width: 700px) and (max-width: 1200px) {
 	.answerButton {
 		display: block;
@@ -124,8 +124,12 @@ section#score h3{
 
 @media screen and (max-width: 699px) {
 	.answerButton {
-		display: block;
-		margin: 1em 0 1em .5em;
+		display: inline-block;
+		margin: 1em auto 0 auto;
+		border-radius: 5px;
+		height: 45px;
+		width: 90%;
+		font-size: 1em;
 	}
 	h1 {
 		font-size: 2.2em;
@@ -140,4 +144,8 @@ section#score h3{
 	.scoreDisplay {
 		width: 100%;
 	}
+	#answers{
+		display: none;
+	}
+
 }
