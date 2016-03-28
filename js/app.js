@@ -2,10 +2,11 @@ $(document).ready(function () {
 
 	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
 
+	$("#restart").click(startOver);
+
 	// Show intro section and score heading
 	$("#intro").show();
 	$("#quiz").hide();
-	$("#scoreTitle").hide();
 
 
 	// Starts the quiz
@@ -14,9 +15,14 @@ $(document).ready(function () {
 	// Question Handler
 	$("#question").html(showQuestion);
 
+	function startOver() {
+		window.location.reload();
+	}
+
 	function showQuiz() {
 		$("#intro").hide();
 		$("#quiz").show();
+		$("#restart").show();
 	}
 
 	function showQuestion() {
@@ -53,9 +59,11 @@ $(document).ready(function () {
 	          	points += 20;
 	          	progress += 20;
 	          	$("#result").html("Correct!");
+	          	$("#result").css("color", "green");
 	        } else {
 	        	progress += 20;
 	        	$("#result").html("Wrong!");
+	        	$("#result").css("color", "red");
 	        }
 			    //Clean all input radio buttons
 			   //$('#questionAnswers')[0].reset();
@@ -92,11 +100,11 @@ $(document).ready(function () {
 		function showScore() {
 			//shows the user there final score
 			var finalScore = points;
-			$("#scoreTitle").show();
+			$("#scoreboard").show();
 			$("#actualScore").html(finalScore);
 		}
-	    
 
+	   
 	    init();
 	}
 

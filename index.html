@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
 	<title>Basketball Quiz</title>
+	<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -11,6 +14,13 @@
 <body>
 	<header>
 		<h1>Basketball Quiz</h1>
+		<div id="scoreboard">
+			<h4 id="scoreTitle">Your Score</h4>
+			<div class="container scoreDisplay" id="actualScore"></div>
+		</div>
+		<div id="restart">
+			<h4>Start Over?</h4>
+		</div>
 	</header>
 	<section id="intro">
 		<div class="container">
@@ -23,7 +33,7 @@
 		<div class="container">
 			<progress id="progressBar" value="0" max="100"></progress> 
 
-			<h4 id="currentQuestion"><h4>
+			<h4 id="currentQuestion"></h4>
 			<p id="question"></p>
 
 			<ul id="answers">
@@ -40,14 +50,12 @@
 			</div>
 			<div id="score">
 				<h3 id="result"></h3>
-				<h4 id="scoreTitle">Your Score</h4>
-				<div class="container scoreDisplay" id="actualScore"></div>
 			</div>
 		</div>
 	</section>
 
 	<footer>
-		<small>&copy;2015 ME Innovation - Thinkful Project</small>
+		<small>&copy;2016 ME Innovation</small>
 	</footer>
 </body>
 </html>

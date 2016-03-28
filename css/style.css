@@ -1,6 +1,7 @@
 body {
 	font-family: Arial, sans-serif;
-	background-color: #00001F;
+	background: url("../img/court_bg.jpg") no-repeat center center fixed;
+	background-size: cover;
 	color: white;
 	text-align: center;
 }
@@ -28,6 +29,14 @@ ul {
 	margin-left: 46%;
 	text-align: left;
 }
+
+#quiz > .container {
+	background-color: red;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    padding: 40px;
+}
+
 #quiz-start {
 	background-color: #FF9933;
 	padding: 1em 4em;
@@ -55,6 +64,8 @@ ul {
 
 .answerButton {
 	background-color: #FF9933;
+	background: url("../img/basketball_bg.jpg") no-repeat center center;
+	background-size: cover;
 	border-radius: 90px;
 	width: 90px;
 	height: 90px;
@@ -62,10 +73,12 @@ ul {
 	font-size: 3em;
 	margin: 1em 2em .5em 2em;
 	font-weight: bold;
+	color: #ccc;
 }
 
 .answerButton:hover {
-	background-color: #E65C00;
+	border: 5px solid #fff;
+	color: white;
 }
 
 #intro {
@@ -73,16 +86,41 @@ ul {
 }
 
 .scoreDisplay{
-	background-color: #666;
+	background-color: #000;
+	color: red;
+	border: 5px solid #666;
 	background-size: 0 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	width: 15%;
+	width: 100%;
 	margin: 0 auto;
 	font-size: 4em;
 }
 
+#scoreboard {
+	position: absolute;
+	top: 0;
+	right: 1.4em;
+	width: 10%;
+	display: none;
+}
+
+#restart {
+	position: absolute;
+	top: 3em;
+	left: 1.4em;
+	width: 10%;
+	background-color: #666;
+	border-radius: .8em;
+	cursor: pointer;
+	display: none;
+}
+
+#restart:hover {
+	background-color: #fff;
+	color: #666;
+}
 
 section#score h3{
 	font-size: 1em;
@@ -92,6 +130,13 @@ section#score h3{
 .rightAnswer {
 	color: green;
 	font-weight: bold;
+}
+
+#result {
+	background-color: #000;
+	margin: 1em auto 0 auto;
+	width: 20%;
+	padding: 10px;
 }
 
 .wrongAnswer {
@@ -105,10 +150,18 @@ section#score h3{
 
 #score {
 	margin-top: 2em;
+	border-top: 2px dashed #fff;
+	height: 40px;
 }
 
+#actualScore {
+	font-family: 'VT323', sans-serif;
+}
 
 @media screen and (min-width: 700px) and (max-width: 1200px) {
+	html {height: 100%; width: 100%; }
+	body { height: 100%; min-height: 100%; }
+
 	.answerButton {
 		display: block;
 		margin: 15px 0px 15px 15px;
@@ -123,6 +176,9 @@ section#score h3{
 }
 
 @media screen and (max-width: 699px) {
+	html {height: 100%; width: 100%; }
+	body { height: 100%; min-height: 100%; }
+
 	.answerButton {
 		display: inline-block;
 		margin: 1em auto 0 auto;
