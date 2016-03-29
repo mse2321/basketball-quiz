@@ -7,7 +7,8 @@ $(document).ready(function () {
 	// Show intro section and score heading
 	$("#intro").show();
 	$("#quiz").hide();
-
+	$("#result").hide();
+	$("#mobile_menu").hide();
 
 	// Starts the quiz
 	$("#quiz-start").click(showQuiz);
@@ -22,7 +23,7 @@ $(document).ready(function () {
 	function showQuiz() {
 		$("#intro").hide();
 		$("#quiz").show();
-		$("#restart").show();
+		//$("#restart").show();
 	}
 
 	function showQuestion() {
@@ -39,22 +40,19 @@ $(document).ready(function () {
 		var progress = 0;
 	    
 	    function showQuestions (index) {
-	      $('#currentQuestion').html("Question " + (index + 1));
-	      $('#question').html(questions[index].question);
-	      questions[index].answers.forEach(function (item, index) {
-	        $('#answer' + (index + 1)).attr('value', item);
-	        if(($(window).width()) < "700") {
-		        $('button#answer' + (index + 1)).html(item);
-		        $('ul#answers').hide();
-		        $('span#value' + (index + 1)).append("<br />");
-	    	} else {
+	      	$('#currentQuestion').html("Question " + (index + 1));
+	      	$('#question').html(questions[index].question);
+	      	questions[index].answers.forEach(function (item, index) {
+	        	$('#answer' + (index + 1)).attr('value', item);
 	    		$('li#value' + (index + 1)).html(item);
-		        $('.mobileAnswers').hide();
-	    	}
-	      });
-	    }
+		    	$('.mobileAnswers').hide();
+	    	});
+	    };
 	    
 	    $('#questionAnswers').on('click', 'button[name="answer"]', function () {
+
+	    	$("#result").show();
+
 	      	if ( $(this)[0].value === questions[currentQuestion].correct){
 	          	points += 20;
 	          	progress += 20;
@@ -100,12 +98,18 @@ $(document).ready(function () {
 		function showScore() {
 			//shows the user there final score
 			var finalScore = points;
+			$("#mobile_menu").show();
 			$("#scoreboard").show();
 			$("#actualScore").html(finalScore);
+
+			if ($(window).width() < 1000) {
+				$("#restart").show();
+			}
+			
 		}
 
 	   
 	    init();
-	}
+	};
 
 });
