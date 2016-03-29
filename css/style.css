@@ -178,7 +178,6 @@ section#score h3{
 		min-height: 100%; 
 		overflow-x: hidden;
 		overflow-y: scroll;
-		position: absolute;
 		top: 0;
 		bottom: 0;
 		right: 0;
