@@ -31,6 +31,11 @@ ul {
 	text-align: left;
 }
 
+#quiz {
+	width: 100%;
+    position: fixed;
+}
+
 #quiz > .container {
 	background-color: red;
     border-top: 10px solid white;
@@ -176,7 +181,7 @@ section#score h3{
 	body { 
 		height: 100%; 
 		min-height: 100%; 
-		overflow-x: hidden;
+		overflow-x: scroll;
 		overflow-y: scroll;
 		top: 0;
 		bottom: 0;
@@ -296,6 +301,11 @@ section#score h3{
 
 	#mobile_menu {
 		height: 100%;
+	}
+
+	#quiz {
+		position: fixed;
+		top: 0 ;
 	}
 
 	#restart {
