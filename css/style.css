@@ -183,6 +183,7 @@ section#score h3{
 		bottom: 0;
 		right: 0;
 		left: 0;
+		
 	}
 
 	.answerButton {
@@ -291,6 +292,7 @@ section#score h3{
 	.answerButton {
 		width: 15%;
 		margin: .25em .5em 0 .5em;
+		height: 90px;
 	}
 
 	#mobile_menu {
@@ -306,7 +308,7 @@ section#score h3{
 		text-align: center;
 		margin-left: 0;
     	margin-bottom: 0;
-    	box-sizing: border-box;
+    	padding-left: 0;
 	}
 
 	li {
