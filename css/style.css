@@ -20,7 +20,7 @@ h2 {
 footer {
 	color: #546E7A;
 	position: absolute;
-    left: 48%;
+    left: 47%;
     bottom: 10px;
 }
 
@@ -108,7 +108,7 @@ button {
 	color: red;
 	border: 5px solid #546E7A;
 	background-size: 0 100%;
-	width: 100%;
+	width: 150px;
 	font-size: 4em;
 	display: inline;
 	position: absolute;
@@ -136,7 +136,7 @@ button {
 	position: absolute;
 	top: 1.5em;
 	left: 1.5em;
-	width: 10%;
+	width: 150px;
 	background-color: #546E7A;
 	border-radius: .8em;
 	cursor: pointer;
