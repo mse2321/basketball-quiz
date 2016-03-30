@@ -537,11 +537,6 @@ section#score h3{
 		z-index: 1000;
 	}
 
-	#quiz {
-		position: fixed;
-		top: 0 ;
-	}
-
 	#restart {
 		padding-bottom: 0;
 	}
