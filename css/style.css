@@ -249,7 +249,7 @@ section#score h3{
 	}
 
 	section#score, section#score p {
-		width: 80%;
+		width: 100%;
 		margin: 0 auto;
 	}
 
@@ -370,7 +370,6 @@ section#score h3{
 
 	.scoreDisplay {
 		width: 100%;
-		right: 0;
     	top: 1em;
 	}
 
@@ -379,7 +378,7 @@ section#score h3{
 		padding-bottom: 25px;
 		width: 90%;
     	font-size: 20px;
-    	top: 10em;
+    	top: 15em;
     	left: 5%;
     	right: 5%;
 	}
@@ -413,7 +412,7 @@ section#score h3{
 		left: 0;
 		right: 0;
 		padding: 10px;
-		height: 50%;
+		height: 100%;
 		z-index: 1000;
 	}
 
@@ -595,8 +594,13 @@ section#score h3{
 		color: #fff;
 	}
 
+	#questionAnswers {
+		width: 100%;
+    	margin: 0 auto;
+	}
+
 	footer {
-		margin-top: 1.5em;
+		display: none;
 	}
 
 }
