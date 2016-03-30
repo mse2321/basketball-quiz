@@ -101,10 +101,7 @@ $(document).ready(function () {
 			$("#mobile_menu").show();
 			$("#scoreboard").show();
 			$("#actualScore").html(finalScore);
-
-			if ($(window).width() < 1000) {
-				$("#restart").show();
-			}
+			$("#restart").show();
 			
 		}
 

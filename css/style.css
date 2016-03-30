@@ -177,7 +177,7 @@ section#score h3{
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 529px) {
 	html {
 		height: 100%; 
 		width: 100%; 
@@ -217,7 +217,227 @@ section#score h3{
 
 	ul {
 		text-align: left;
-		padding: 0;
+		padding-left: 80px;
+    	width: 200px;
+    	margin: 0 auto
+	}
+
+
+	h1 {
+		font-size: 2.2em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h4 {
+		margin-bottom: 0;
+	}
+
+	section#score, section#score p {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.scoreDisplay {
+		width: 100%;
+	}
+
+	#restart {
+		display: none;
+		padding-bottom: 25px;
+		width: 90%;
+    	font-size: 20px;
+    	top: 10em;
+    	left: 5%;
+    	right: 5%;
+	}
+
+	#result {
+		width: 22%;
+    	padding: 10px;
+    	margin: .5em auto 0 auto;
+	}
+	
+	#scoreboard {
+		right: 5%;
+		left: 5%;
+		top: 5%;
+		width: 90%;
+		background-color: #546E7A;
+		z-index: 1000;
+	}
+
+	#scoreTitle {
+		color: #fff;
+	}
+
+	#mobile_menu {
+		background-color: black;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 10px;
+		height: 50%;
+		z-index: 1000;
+	}
+
+}
+
+@media screen and (min-width: 530px) and (max-width: 789px) {
+	html {
+		height: 100%; 
+		width: 100%; 
+	}
+
+	body { 
+		height: 100%; 
+		min-height: 100%;
+		overflow-y: scroll;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		
+	}
+
+	.answerButton {
+		display: inline-block;
+		margin: 1em 1.7em 0 1.7em;
+		border-radius: 150%;
+		height: 110px;
+		width: 120px;
+		font-size: 2.5em;
+	}
+
+	#question {
+		margin-top: 0;
+	}
+
+	#quiz > .container {
+		padding: 20px;
+	}
+
+	#quiz-start {
+		margin-bottom: 0;
+	}
+
+	ul {
+		text-align: left;
+		padding-left: 80px;
+    	width: 200px;
+    	margin: 0 auto
+	}
+
+
+	h1 {
+		font-size: 2.2em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h4 {
+		margin-bottom: 0;
+	}
+
+	section#score, section#score p {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.scoreDisplay {
+		width: 100%;
+	}
+
+	#restart {
+		display: none;
+		padding-bottom: 25px;
+		width: 90%;
+    	font-size: 20px;
+    	top: 10em;
+    	left: 5%;
+    	right: 5%;
+	}
+
+	#result {
+		width: 22%;
+    	padding: 10px;
+    	margin: .5em auto 0 auto;
+	}
+	
+	#scoreboard {
+		right: 5%;
+		left: 5%;
+		top: 5%;
+		width: 90%;
+		background-color: #546E7A;
+		z-index: 1000;
+	}
+
+	#scoreTitle {
+		color: #fff;
+	}
+
+	#mobile_menu {
+		background-color: black;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 10px;
+		height: 50%;
+		z-index: 1000;
+	}
+
+}
+
+@media screen and (min-width: 790px) and (max-width: 1229px) {
+	html {
+		height: 100%; 
+		width: 100%; 
+	}
+
+	body { 
+		height: 100%; 
+		min-height: 100%;
+		overflow-y: scroll;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		
+	}
+
+	.answerButton {
+		display: inline-block;
+		margin: 1em 2% 0 2%;
+		border-radius: 150%;
+		height: 100px;
+		width: 110px;
+		font-size: 2.5em;
+	}
+
+	#question {
+		margin-top: 0;
+	}
+
+	#quiz > .container {
+		padding: 20px;
+	}
+
+	#quiz-start {
+		margin-bottom: 0;
+	}
+
+	ul {
+		text-align: left;
+		padding-left: 80px;
     	width: 200px;
     	margin: 0 auto
 	}
@@ -288,6 +508,12 @@ section#score h3{
 }
 
 @media screen and (max-height: 500px) {
+
+	body {
+		overflow-y: scroll;
+
+	}
+	
 	#answers li {
 		display: inline;
 	}
