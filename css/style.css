@@ -538,7 +538,6 @@ section#score h3{
 		left: 5%;
 		top: 5%;
 		width: 90%;
-		background-color: #546E7A;
 		z-index: 1000;
 	}
 
@@ -624,6 +623,17 @@ section#score h3{
 
 	#scoreTitle {
 		color: #fff;
+	}
+
+	.scoreDisplay {
+		right: 0;
+		top: 50px;
+	}
+
+	#scoreTitle {
+		right: 0;
+    	left: 0;
+    	position: relative;
 	}
 
 	#questionAnswers {
