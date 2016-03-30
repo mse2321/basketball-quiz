@@ -293,8 +293,8 @@ section#score h3{
 	#scoreTitle {
 		color: #fff;
 		right: 0;
-    	left: 0;
-    	position: relative;
+		left: 5px;    	
+		position: relative;
 	}
 
 	#mobile_menu {
@@ -425,7 +425,7 @@ section#score h3{
 	#scoreTitle {
 		color: #fff;
 		right: 0;
-    	left: 0;
+    	left: 5px;
     	position: relative;
 	}
 
@@ -623,11 +623,16 @@ section#score h3{
 
 	#scoreTitle {
 		color: #fff;
+		left: 5px;
 	}
 
 	.scoreDisplay {
 		right: 0;
 		top: 50px;
+	}
+
+	#restart {
+		top: 5em;
 	}
 
 	#scoreTitle {
