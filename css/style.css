@@ -203,7 +203,7 @@ section#score h3{
 	}
 
 	#questionAnswers {
-		width: 80%;
+		width: 100%;
     	margin: 0 auto;
 	}
 
@@ -255,6 +255,9 @@ section#score h3{
 
 	.scoreDisplay {
 		width: 100%;
+		right: 0;
+		left: 0;
+		top: 1em;
 	}
 
 	#restart {
@@ -294,7 +297,7 @@ section#score h3{
 		left: 0;
 		right: 0;
 		padding: 10px;
-		height: 50%;
+		height: 100%;
 		z-index: 1000;
 	}
 
@@ -371,6 +374,8 @@ section#score h3{
 	.scoreDisplay {
 		width: 100%;
     	top: 1em;
+    	right: 0;
+		left: 0;
 	}
 
 	#restart {
