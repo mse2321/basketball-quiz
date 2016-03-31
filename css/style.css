@@ -515,6 +515,8 @@ section#score h3{
 
 	.scoreDisplay {
 		width: 100%;
+		right: 0;
+		top: 50px;
 	}
 
 	#restart {
@@ -542,7 +544,9 @@ section#score h3{
 	}
 
 	#scoreTitle {
-		color: #fff;
+		left: 5px;
+		position: relative;
+		right: 0;
 	}
 
 	#mobile_menu {
@@ -553,7 +557,7 @@ section#score h3{
 		left: 0;
 		right: 0;
 		padding: 10px;
-		height: 50%;
+		height: 100%;
 		z-index: 1000;
 	}
 
@@ -632,7 +636,7 @@ section#score h3{
 	}
 
 	#restart {
-		top: 5em;
+		top: 8em;
 	}
 
 	#scoreTitle {
