@@ -22,6 +22,7 @@ footer {
 	position: absolute;
     left: 46%;
     bottom: 10px;
+    display: none;
 }
 
 li {
@@ -206,6 +207,7 @@ section#score h3{
 		position: relative;
 		margin-top: 4em;
 		left: 0;
+		display: none;
 	}
 
 	#questionAnswers {
@@ -445,6 +447,7 @@ section#score h3{
 		position: relative;
 		margin-top: 4em;
 		left: 0;
+		display: none;
 	}
 
 
