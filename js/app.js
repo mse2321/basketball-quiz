@@ -1,112 +1,129 @@
-$(document).ready(function () {
 
-	var question = [{question:'What is my name', correct: 'A', answers: ['A', 'B', 'C', 'D']}];
+var demo = angular.module('demo', ['ngRoute']);
 
-	$("#restart").click(startOver);
+demo.config(['$routeProvider', function($routeProvider){
+            $routeProvider.when('/', {
+              templateUrl: 'intro.html',
+              controller: 'ctrl'
+            })
+            .when('/quiz', {
+              templateUrl: 'quiz.html',
+              controller: 'ctrl'
+            })
+            .when('/score', {
+              templateUrl: 'score.html',
+              controller: 'ctrl'
+            })
+            .otherwise('/error',  {
+              template: '<p>Error - Page Not Found</p>'
+            });
+}]); // end of promises and routes
 
-	// Show intro section and score heading
-	$("#intro").show();
-	$("#quiz").hide();
-	$("#result").hide();
-	$("#mobile_menu").hide();
 
-	// Starts the quiz
-	$("#quiz-start").click(showQuiz);
+demo.controller('ctrl', function($scope){
 
-	// Question Handler
-	$("#question").html(showQuestion);
+	$scope.questions = [
+		{question:'Which of this teams has NOT won an NBA Champion?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
+		{question:'What NBA player was the sillouette for their logo?', correct: 'Jerry West', answers:['Wilt Chamberlain', 'Michael Jordan', 'Jerry West', 'Julius Erving']},
+		{question:'What company makes the official NBA basketball?', correct: 'Spalding', answers:['Champion', 'Spalding', 'Nike', 'Franklin Sports']},
+		{question:'What NBA team plays their games in Chicago?', correct: 'Bulls', answers:['Kings', 'Bucks', 'Bulls', 'Pistons']},
+		{question:'Which team has won the most NBA Championships?', correct: 'Boston Celtics', answers:['Los Angeles Lakers', 'San Antonio Spurs', 'New York Knicks', 'Boston Celtics']}
+	];
 
-	function startOver() {
+	$scope.startOver = function() {
 		window.location.reload();
-	}
+	};
 
-	function showQuiz() {
-		$("#intro").hide();
-		$("#quiz").show();
-		//$("#restart").show();
-	}
+	$scope.showQuestions = function() {
 
-	function showQuestion() {
-	  	var questions = [
-		    {question:'Which of this teams has NOT won an NBA Champion?', correct: 'A - Orlando Magic', answers:['A - Orlando Magic', 'B - Boston Celtics', 'C - Houston Rockets', 'D - Dallas Mavericks']},
-		    {question:'What NBA player was the sillouette for their logo?', correct: 'C - Jerry West', answers:['A - Wilt Chamberlain', 'B - Michael Jordan', 'C - Jerry West', 'D - Julius Erving']},
-		    {question:'What company makes the official NBA basketball?', correct: 'B - Spalding', answers:['A - Champion', 'B - Spalding', 'C - Nike', 'D - Franklin Sports']},
-		    {question:'What NBA team plays their games in Chicago?', correct: 'C - Bulls', answers:['A - Kings', 'B - Bucks', 'C - Bulls', 'D - Pistons']},
-		    {question:'Which team has won the most NBA Championships?', correct: 'D - Boston Celtics', answers:['A - Los Angeles Lakers', 'B - San Antonio Spurs', 'C - New York Knicks', 'D - Boston Celtics']}
-	    ];
-	    
-	    var currentQuestion = 0;
-	    var points = 0;
-		var progress = 0;
-	    
-	    function showQuestions (index) {
-	      	$('#currentQuestion').html("Question " + (index + 1));
-	      	$('#question').html(questions[index].question);
-	      	questions[index].answers.forEach(function (item, index) {
-	        	$('#answer' + (index + 1)).attr('value', item);
-	    		$('li#value' + (index + 1)).html(item);
-		    	$('.mobileAnswers').hide();
-	    	});
-	    };
-	    
-	    $('#questionAnswers').on('click', 'button[name="answer"]', function () {
+	    $scope.currentQuestion = 0;
 
-	    	$("#result").show();
+	    $('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
+	    $('#question').html($scope.questions[$scope.currentQuestion].question);
 
-	      	if ( $(this)[0].value === questions[currentQuestion].correct){
-	          	points += 20;
-	          	progress += 20;
-	          	$("#result").html("Correct!");
-	          	$("#result").css("color", "green");
-	        } else {
-	        	progress += 20;
-	        	$("#result").html("Wrong!");
-	        	$("#result").css("color", "red");
-	        }
-			    //Clean all input radio buttons
-			   //$('#questionAnswers')[0].reset();
+	    for(i = 0; i < 4; i++) {
 
-			    if (currentQuestion < 4) {
-			    	currentQuestion += 1;
-				} else {
-					currentQuestion = 4;
-				}
-	    		progressMade(progress, points);
-	    		showQuestions(currentQuestion);
-	    });
-	    
-	    function init () {
-	      showQuestions(0);
+	    	$scope.answerVal = $scope.questions[$scope.currentQuestion].answers[i];
+
+	    	$('#answers li').html('<input type="radio" name="answer" value="' + $scope.answerVal + ' ng-click="quizAnswers()">' + $scope.answerVal);
+		};
+
+	    $scope.quizAnswers($scope.currentQuestion);
+	};
+
+	$scope.quizAnswers = function(currentQuestion) {
+
+		//$scope.answer = $(this).val();
+		//console.log($scope.answer);
+
+		$scope.points = 0;
+		$scope.progress = 0;
+
+	    $("#result").show();
+
+	    if ( $scope.answer === $scope.questions[$scope.currentQuestion].correct){
+	        $scope.points += 20;
+	        $scope.progress += 20;
+	        $("#result").html("Correct!");
+	        $("#result").css("color", "green");
+	    } else {
+	        $scope.progress += 20;
+	        $("#result").html("Wrong!");
+	        $("#result").css("color", "red");
 	    }
-	    
-	    function progressMade() {
+		//Clean all input radio buttons
+		//$('#questionAnswers')[0].reset();
 
-			if (progress === 20) {
+		if ($scope.currentQuestion < 4) {
+			$scope.currentQuestion += 1;
+		} else {
+			$scope.currentQuestion = 4;
+		}
+	    $scope.progressMade($scope.progress, $scope.points);
+	    $scope.showQuestions($scope.currentQuestion);
+	};
+
+	$scope.progressMade = function(progress, points) {
+
+			if ($scope.progress === 20) {
 				$("#progressBar").attr("value", "20");
-			} else if (progress === 40) {
+			} else if ($scope.progress === 40) {
 				$("#progressBar").attr("value", "40");
-			} else if (progress === 60) {
+			} else if ($scope.progress === 60) {
 				$("#progressBar").attr("value", "60");
-			} else if (progress === 80) {
+			} else if ($scope.progress === 80) {
 				$("#progressBar").attr("value", "80");
-			} else if (progress === 100) {
+			} else if ($scope.progress === 100) {
 				$("#progressBar").attr("value", "100");
-				showScore(points);
+				$scope.showScore($scope.points);
 			}
-		}
+	};
 
-		function showScore() {
-			//shows the user there final score
-			var finalScore = points;
-			$("#mobile_menu").show();
-			$("#scoreboard").show();
-			$("#actualScore").html(finalScore);
-			$("#restart").show();
+	$scope.showScore = function(points) {
+		//shows the user there final score
+		$scope.finalScore = $scope.points;
+		$("#mobile_menu").show();
+		$("#scoreboard").show();
+		$("#actualScore").html($scope.finalScore);
+		$("#restart").show();
 			
-		}
-
-	   
-	    init();
 	};
 
 });
+
+/*
+
+// gets country listing
+demo.factory('list', function($http){
+            return function(){
+              return $http ({ 
+                cache: true,
+                method: 'JSONP', 
+                url: 'http://api.geonames.org/countryInfoJSON?username=mse2335',
+                params: {callback: 'JSON_CALLBACK'}
+              })
+            };
+}); // end of list
+
+
+*/

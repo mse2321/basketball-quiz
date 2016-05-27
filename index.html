@@ -6,57 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
 	<title>Basketball Quiz</title>
 	<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+	<!--<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />-->
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="js/app.js"></script>
 </head>
-<body>
+<body ng-app="demo" ng-controller="ctrl">
 	<header>
 		<h1>Basketball Quiz</h1>
 		<div id="mobile_menu">
 			<div id="scoreboard">
 				<h4 id="scoreTitle">Your Score</h4><div class="container scoreDisplay" id="actualScore"></div>
 			</div>
-			<div id="restart">
+			<div id="restart" ng-click="startOver()">
 				<h4>Start Over?</h4>
 			</div>
 		</div>
 	</header>
-	<section id="intro">
-		<div class="container">
-			<h2>Get ready to take the quiz!</h2>
-			<p>See how much you know about the NBA. Click below to see how you do.</p>
-			<button id="quiz-start">Start</button>
-		</div>
+	<section ng-view>
 	</section>
-	<section id="quiz">
-		<div class="container">
-			<progress id="progressBar" value="0" max="100"></progress> 
-
-			<h4 id="currentQuestion"></h4>
-			<p id="question"></p>
-
-			<ul id="answers">
-				<li id='value1'></li>
-				<li id='value2'></li>
-				<li id='value3'></li>
-				<li id='value4'></li>
-			</ul>
-			<div id="questionAnswers">
-				<button id="answer1" class="answerButton" name="answer">A</button>
-				<button id="answer2" class="answerButton" name="answer">B</button>
-				<button id="answer3" class="answerButton" name="answer">C</button>
-				<button id="answer4" class="answerButton" name="answer">D</button>
-			</div>
-			<div id="score">
-				<h3 id="result"></h3>
-			</div>
-		</div>
-	</section>
-
 	<footer>
 		<small>&copy;2016 ME Innovation</small>
 	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
