@@ -6,7 +6,9 @@
 		<p id="question"></p>
 
 		<ul id="answers">
-			<li></li>
+			<li ng-repeat="item in currentAnswers">
+				<input type="radio" name="answer" value="{{ item }}" ng-click="quizAnswers()">&nbsp;{{ item }}
+			</li>
 		</ul>
 		<!-- <div id="questionAnswers">
 			<button id="answer1" class="answerButton" name="answer" ng-click="quizAnswers()">A</button>

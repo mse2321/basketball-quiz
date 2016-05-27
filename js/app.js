@@ -30,30 +30,23 @@ demo.controller('ctrl', function($scope){
 		{question:'Which team has won the most NBA Championships?', correct: 'Boston Celtics', answers:['Los Angeles Lakers', 'San Antonio Spurs', 'New York Knicks', 'Boston Celtics']}
 	];
 
+	$scope.currentQuestion = 0;
+
+	$scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
+
 	$scope.startOver = function() {
 		window.location.reload();
 	};
 
 	$scope.showQuestions = function() {
 
-	    $scope.currentQuestion = 0;
-
 	    $('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
 	    $('#question').html($scope.questions[$scope.currentQuestion].question);
-
-	    for(i = 0; i < 4; i++) {
-
-	    	$scope.answerVal = $scope.questions[$scope.currentQuestion].answers[i];
-
-	    	$('#answers li').html('<input type="radio" name="answer" value="' + $scope.answerVal + ' ng-click="quizAnswers()">' + $scope.answerVal);
-		};
-
-	    $scope.quizAnswers($scope.currentQuestion);
 	};
 
-	$scope.quizAnswers = function(currentQuestion) {
+	$scope.quizAnswers = function() {
 
-		//$scope.answer = $(this).val();
+		//$scope.answer = $('[name="answer"]').val();
 		//console.log($scope.answer);
 
 		$scope.points = 0;
