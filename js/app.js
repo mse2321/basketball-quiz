@@ -19,8 +19,14 @@ demo.config(['$routeProvider', function($routeProvider){
             });
 }]); // end of promises and routes
 
+demo.factory('scoreTotal', ['points', function(points) {
+		//shows the user there final score
+		$scope.finalScore = $scope.points;
+		return $scope.finalScore;
+}]); // end of factory
 
-demo.controller('ctrl', function($scope){
+
+demo.controller('ctrl', ['$scope', 'scoreTotal', function($scope, scoreTotal){
 
 	$scope.questions = [
 		{question:'Which of this teams has NOT won an NBA Champion?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
@@ -31,6 +37,7 @@ demo.controller('ctrl', function($scope){
 	];
 
 	$scope.currentQuestion = 0;
+	$scope.points = 0;
 
 	//console.log($scope.currentAnswers);
 
@@ -56,31 +63,35 @@ demo.controller('ctrl', function($scope){
 	$scope.quizAnswers = function() {
 
 		$scope.answer = $(this).prop("item");
+		$scope.quizLength = $scope.questions.length - 1;
+		$scope.correctAnswer = $scope.questions[$scope.currentQuestion].correct;
 		console.log($scope.answer);
-
-		$scope.points = 0;
+		$scope.test = $scope.questions[$scope.currentQuestion].correct;
+		console.log($scope.test);
 
 	    $("#result").show();
 
 	    // need to figure out how to add points if answer is correct
-	    if ( $scope.answer === $scope.questions[$scope.currentQuestion].correct){
-	        $scope.points = 20 * ($scope.currentQuestion + 1);
+	    if ($scope.answer === $scope.correctAnswer){
+	        $scope.points += 20;
 	        console.log($scope.points);
 	        $("#result").html("Correct!");
 	        $("#result").css("color", "green");
 	    } else {
+	    	$scope.points += 0;
 	        $("#result").html("Wrong!");
 	        $("#result").css("color", "red");
 	    };
 
-		if ($scope.currentQuestion < 4) {
+		if ($scope.currentQuestion < $scope.quizLength) {
 			$scope.currentQuestion += 1;
 			$scope.answerCounter = $scope.currentQuestion;
 			$scope.showQuestions($scope.currentQuestion);
 		} else {
-			$scope.answerCounter = 5;
+			$scope.answerCounter = $scope.quizLength + 1;
 		}
 
+		console.log($scope.points);
 		console.log($scope.answerCounter);
 	    $scope.progressMade($scope.answerCounter, $scope.points);
 	};
@@ -97,19 +108,12 @@ demo.controller('ctrl', function($scope){
 				$("#progressBar").attr("value", "80");
 			} else if ($scope.answerCounter === 5) {
 				$("#progressBar").attr("value", "100");
-				$scope.showScore($scope.points);
+				scoreTotal($scope.points);
+				$("#checkScore").show();
 			}
 	};
 
-	$scope.showScore = function(points) {
-		console.log($scope.points);
-		//shows the user there final score
-		$("#checkScore").show();
-		$scope.finalScore = $scope.points;
-		$("#actualScore").html($scope.finalScore);		
-	};
-
-});
+}]);
 
 /*
 

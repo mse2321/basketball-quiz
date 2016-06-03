@@ -403,12 +403,6 @@ section#score h3{
 	h4 {
 		margin-bottom: 0;
 	}
-
-	section#score, section#score p {
-		width: 80%;
-		margin: 0 auto;
-	}
-
 	.scoreDisplay {
 		width: 100%;
     	top: 1em;
