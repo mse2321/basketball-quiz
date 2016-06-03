@@ -32,74 +32,81 @@ demo.controller('ctrl', function($scope){
 
 	$scope.currentQuestion = 0;
 
-	$scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
+	//console.log($scope.currentAnswers);
 
 	$scope.startOver = function() {
-		window.location.reload();
+		//window.location.reload();
+		window.location.assign('http://localhost:8080/basketball-quiz/index.html#/quiz');
 	};
 
-	$scope.showQuestions = function() {
+	$scope.showQuestions = function(currentQuestion) {
 
-	    $('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
+	    if ($scope.currentQuestion <= 4) {
+	    	$('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
+	    } else {
+	    	$('#currentQuestion').html("Question " + $scope.currentQuestion);
+	    };
+
 	    $('#question').html($scope.questions[$scope.currentQuestion].question);
+	    $scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
+	    console.log($scope.currentAnswers);
+	    console.log($scope.currentQuestion);
 	};
 
 	$scope.quizAnswers = function() {
 
-		//$scope.answer = $('[name="answer"]').val();
-		//console.log($scope.answer);
+		$scope.answer = $(this).prop("item");
+		console.log($scope.answer);
 
 		$scope.points = 0;
-		$scope.progress = 0;
 
 	    $("#result").show();
 
+	    // need to figure out how to add points if answer is correct
 	    if ( $scope.answer === $scope.questions[$scope.currentQuestion].correct){
-	        $scope.points += 20;
-	        $scope.progress += 20;
+	        $scope.points = 20 * ($scope.currentQuestion + 1);
+	        console.log($scope.points);
 	        $("#result").html("Correct!");
 	        $("#result").css("color", "green");
 	    } else {
-	        $scope.progress += 20;
 	        $("#result").html("Wrong!");
 	        $("#result").css("color", "red");
-	    }
-		//Clean all input radio buttons
-		//$('#questionAnswers')[0].reset();
+	    };
 
 		if ($scope.currentQuestion < 4) {
 			$scope.currentQuestion += 1;
+			$scope.answerCounter = $scope.currentQuestion;
+			$scope.showQuestions($scope.currentQuestion);
 		} else {
-			$scope.currentQuestion = 4;
+			$scope.answerCounter = 5;
 		}
-	    $scope.progressMade($scope.progress, $scope.points);
-	    $scope.showQuestions($scope.currentQuestion);
+
+		console.log($scope.answerCounter);
+	    $scope.progressMade($scope.answerCounter, $scope.points);
 	};
 
-	$scope.progressMade = function(progress, points) {
+	$scope.progressMade = function(answerCounter, points) {
 
-			if ($scope.progress === 20) {
+			if ($scope.answerCounter === 1) {
 				$("#progressBar").attr("value", "20");
-			} else if ($scope.progress === 40) {
+			} else if ($scope.answerCounter === 2) {
 				$("#progressBar").attr("value", "40");
-			} else if ($scope.progress === 60) {
+			} else if ($scope.answerCounter === 3) {
 				$("#progressBar").attr("value", "60");
-			} else if ($scope.progress === 80) {
+			} else if ($scope.answerCounter === 4) {
 				$("#progressBar").attr("value", "80");
-			} else if ($scope.progress === 100) {
+			} else if ($scope.answerCounter === 5) {
 				$("#progressBar").attr("value", "100");
 				$scope.showScore($scope.points);
 			}
 	};
 
 	$scope.showScore = function(points) {
+		console.log($scope.points);
 		//shows the user there final score
+		$("#checkScore").show();
 		$scope.finalScore = $scope.points;
-		$("#mobile_menu").show();
-		$("#scoreboard").show();
-		$("#actualScore").html($scope.finalScore);
-		$("#restart").show();
-			
+		$("#actualScore").html($scope.finalScore);		
 	};
 
 });
