@@ -19,14 +19,16 @@ demo.config(['$routeProvider', function($routeProvider){
             });
 }]); // end of promises and routes
 
-demo.factory('scoreTotal', ['points', function(points) {
+/* demo.factory('score_total', function(points) {
 		//shows the user there final score
 		$scope.finalScore = $scope.points;
 		return $scope.finalScore;
-}]); // end of factory
+}); // end of factory
+
+*/
 
 
-demo.controller('ctrl', ['$scope', 'scoreTotal', function($scope, scoreTotal){
+demo.controller('ctrl', function($scope){
 
 	$scope.questions = [
 		{question:'Which of this teams has NOT won an NBA Champion?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
@@ -108,12 +110,17 @@ demo.controller('ctrl', ['$scope', 'scoreTotal', function($scope, scoreTotal){
 				$("#progressBar").attr("value", "80");
 			} else if ($scope.answerCounter === 5) {
 				$("#progressBar").attr("value", "100");
-				scoreTotal($scope.points);
 				$("#checkScore").show();
 			}
+			$scope.score_total($scope.points);
 	};
 
-}]);
+	$scope.score_total = function(points) {
+		$scope.finalScore = $scope.points;
+	}
+
+});
+
 
 /*
 
@@ -128,6 +135,5 @@ demo.factory('list', function($http){
               })
             };
 }); // end of list
-
 
 */
