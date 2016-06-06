@@ -17,18 +17,17 @@ demo.config(['$routeProvider', function($routeProvider){
             .otherwise('/error',  {
               template: '<p>Error - Page Not Found</p>'
             });
-}]); // end of promises and routes
-
-/* demo.factory('score_total', function(points) {
+}])// end of promises and routes
+demo.factory('score_total', function() {
 		//shows the user there final score
-		$scope.finalScore = $scope.points;
-		return $scope.finalScore;
-}); // end of factory
+		return {
+				data: {
+					final_score: 0
+				}
+		}
 
-*/
-
-
-demo.controller('ctrl', function($scope){
+}) // end of factory
+demo.controller('ctrl', function($scope, score_total){
 
 	$scope.questions = [
 		{question:'Which of this teams has NOT won an NBA Champion?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
@@ -40,8 +39,7 @@ demo.controller('ctrl', function($scope){
 
 	$scope.currentQuestion = 0;
 	$scope.points = 0;
-
-	//console.log($scope.currentAnswers);
+	$scope.scoreTotal = score_total.data.final_score;
 
 	$scope.startOver = function() {
 		//window.location.reload();
@@ -112,12 +110,14 @@ demo.controller('ctrl', function($scope){
 				$("#progressBar").attr("value", "100");
 				$("#checkScore").show();
 			}
-			$scope.score_total($scope.points);
+			$scope.score($scope.points);
 	};
 
-	$scope.score_total = function(points) {
-		$scope.finalScore = $scope.points;
-	}
+	$scope.score = function(points) {
+		$scope.scoreTotal += $scope.points;
+	};
+
+	console.log($scope.scoreTotal);
 
 });
 

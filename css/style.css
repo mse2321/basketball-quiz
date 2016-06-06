@@ -125,6 +125,10 @@ button {
 	width: 30%;
 }
 
+#actualScore p {
+	margin: 0;
+}
+
 #scoreTitle {
 	color: red;
 	font-size: 40px;
