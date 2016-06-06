@@ -114,7 +114,7 @@ demo.controller('ctrl', function($scope, score_total){
 	};
 
 	$scope.score = function(points) {
-		$scope.scoreTotal += $scope.points;
+		score_total.data.final_score = $scope.points;
 	};
 
 	console.log($scope.scoreTotal);
