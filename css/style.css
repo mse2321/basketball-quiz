@@ -17,6 +17,10 @@ h2 {
 	margin-top: 4em;
 }
 
+h4 {
+	margin: 20px auto;
+}
+
 footer {
 	color: #546E7A;
 	position: absolute;
@@ -81,27 +85,8 @@ button {
 	text-align: center;
 }
 
-.answerButton {
-	background-color: #FF9933;
-	background: url("../img/basketball_bg.jpg") no-repeat center center;
-	background-size: cover;
-	border-radius: 90px;
-	width: 90px;
-	height: 90px;
-	border: none;
-	font-size: 3em;
-	margin: 1em 2em .5em 2em;
-	font-weight: bold;
-	color: #90A4AE;
-}
-
 #answers li, input {
 	cursor: pointer;
-}
-
-.answerButton:hover {
-	border: 5px solid #fff;
-	color: white;
 }
 
 #intro {
@@ -234,15 +219,6 @@ section#score h3{
     	margin: 0 auto;
 	}
 
-	.answerButton {
-		display: inline-block;
-		margin: 1em .2em 0 .2em;
-		border-radius: 150%;
-		height: 110px;
-		width: 120px;
-		font-size: 2.5em;
-	}
-
 	#question {
 		margin-top: 0;
 	}
@@ -254,6 +230,21 @@ section#score h3{
 	#quiz-start {
 		margin-bottom: 0;
 	}
+
+	#actualScore p {
+		margin: 0;
+		position: absolute;
+    	left: 0;
+    	right: 0;
+    	top: 20%;
+	}
+
+	#restart, #checkScore {
+	    padding: 20px;
+	    margin: 20px auto;
+	}
+
+
 
 	ul {
 		text-align: left;
@@ -272,7 +263,7 @@ section#score h3{
 	}
 
 	h4 {
-		margin-bottom: 0;
+		margin: 10px auto;
 	}
 
 	section#score, section#score p {
@@ -281,20 +272,16 @@ section#score h3{
 	}
 
 	.scoreDisplay {
-		width: 100%;
-    	top: 1em;
+		width: 90%;
+    	top: 0;
     	right: 0;
 		left: 0;
+		font-size: 12em;
 	}
 
-	#restart {
-		display: none;
-		padding-bottom: 25px;
-		width: 90%;
-    	font-size: 20px;
-    	top: 15em;
-    	left: 5%;
-    	right: 5%;
+	#mobile_menu {
+		top: 90px;
+		bottom: 0;
 	}
 
 	#result {
@@ -309,13 +296,6 @@ section#score h3{
     	top: 5%;
     	width: 90%;
     	z-index: 1000;
-	}
-
-	#scoreTitle {
-		color: #fff;
-		right: 0;
-		left: 5px;    	
-		position: relative;
 	}
 
 }
@@ -342,15 +322,6 @@ section#score h3{
     	margin: 0 auto;
 	}
 
-	.answerButton {
-		display: inline-block;
-		margin: 1em .8em 0 .8em;
-		border-radius: 150%;
-		height: 110px;
-		width: 120px;
-		font-size: 2.5em;
-	}
-
 	#question {
 		margin-top: 0;
 	}
@@ -361,6 +332,24 @@ section#score h3{
 
 	#quiz-start {
 		margin-bottom: 0;
+	}
+
+	#mobile_menu {
+		top: 90px;
+		bottom: 0;
+	}
+
+	.scoreDisplay {
+		width: 90%;
+    	top: 0;
+    	right: 0;
+		left: 0;
+		font-size: 15em;
+	}
+
+	#restart, #checkScore {
+	    padding: 20px;
+	    margin: 20px auto;
 	}
 
 	ul {
@@ -380,45 +369,21 @@ section#score h3{
 	}
 
 	h4 {
-		margin-bottom: 0;
+		margin: 10px auto;
+	}
+
+	#actualScore p {
+		margin: 0;
+		position: absolute;
+    	left: 0;
+    	right: 0;
+    	top: 17%;
 	}
 	
-	.scoreDisplay {
-		width: 100%;
-    	top: 1em;
-    	right: 0;
-		left: 0;
-	}
-
-	#restart {
-		display: none;
-		padding-bottom: 25px;
-		width: 90%;
-    	font-size: 20px;
-    	top: 15em;
-    	left: 5%;
-    	right: 5%;
-	}
-
 	#result {
 		width: 22%;
     	padding: 10px;
     	margin: .5em auto 0 auto;
-	}
-	
-	#scoreboard {
-    	right: 5%;
-    	left: 5%;
-    	top: 5%;
-    	width: 90%;
-    	z-index: 1000;
-	}
-
-	#scoreTitle {
-		color: #fff;
-		right: 0;
-    	left: 5px;
-    	position: relative;
 	}
 
 	footer {
@@ -448,13 +413,9 @@ section#score h3{
 		
 	}
 
-	.answerButton {
-		display: inline-block;
-		margin: 1em 2% 0 2%;
-		border-radius: 150%;
-		height: 100px;
-		width: 110px;
-		font-size: 2.5em;
+	#mobile_menu {
+		top: 90px;
+		bottom: 0;
 	}
 
 	#question {
@@ -467,6 +428,23 @@ section#score h3{
 
 	#quiz-start {
 		margin-bottom: 0;
+	}
+
+	#actualScore p {
+		margin: 0;
+		position: absolute;
+    	left: 0;
+    	right: 0;
+    	top: 13%;
+	}
+
+	#restart, #checkScore {
+	    padding: 20px;
+	    margin: 20px auto;
+	}
+
+	.scoreDisplay {
+		font-size: 18em;
 	}
 
 	ul {
@@ -485,29 +463,9 @@ section#score h3{
 		font-size: 1.5em;
 	}
 
-	h4 {
-		margin-bottom: 0;
-	}
-
 	section#score, section#score p {
 		width: 80%;
 		margin: 0 auto;
-	}
-
-	.scoreDisplay {
-		width: 100%;
-		right: 0;
-		top: 50px;
-	}
-
-	#restart {
-		display: none;
-		padding-bottom: 25px;
-		width: 90%;
-    	font-size: 20px;
-    	top: 10em;
-    	left: 5%;
-    	right: 5%;
 	}
 
 	#result {
@@ -524,24 +482,6 @@ section#score h3{
 		z-index: 1000;
 	}
 
-	#scoreTitle {
-		left: 5px;
-		position: relative;
-		right: 0;
-		color: #fff;
-	}
-
-	#mobile_menu {
-		background-color: black;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		padding: 10px;
-		height: 100%;
-		z-index: 1000;
-	}
 
 }
 
@@ -552,39 +492,35 @@ section#score h3{
 
 	}
 	
-	#answers li {
-		display: inline;
-	}
-
 	#answers {
-		width: 100%;
+		width: 90%;
 	}
 
 	#question {
 		margin-bottom: 0;
 	}
 
-	.answerButton {
-		width: 100px;
-		margin: .25em .5em 0 .5em;
-		height: 90px;
-	}
-
 	#mobile_menu {
 		height: 100%;
 		z-index: 1000;
+		top: 0;
 	}
 
-	#restart {
-		padding-bottom: 0;
+	#actualScore p {
+		margin: 0;
+		position: absolute;
+    	left: 0;
+    	right: 0;
+	}
+
+	#quiz > .container {
+		margin-top: 0;
 	}
 
 	ul {
 		margin: 0 auto;
-		text-align: center;
 		margin-left: 0;
     	margin-bottom: 0;
-    	padding-left: 0;
 	}
 
 	li {
@@ -607,14 +543,9 @@ section#score h3{
 		margin-top: 1em;
 	}
 
-	#scoreTitle {
-		color: #fff;
-		left: 5px;
-	}
-
 	.scoreDisplay {
 		right: 0;
-		top: 50px;
+		top: 0;
 	}
 
 	#restart {
