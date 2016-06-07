@@ -30,11 +30,16 @@ demo.factory('score_total', function() {
 demo.controller('ctrl', function($scope, score_total){
 
 	$scope.questions = [
-		{question:'Which of this teams has NOT won an NBA Champion?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
+		{question:'Which of this teams has NOT won an NBA Championship?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
 		{question:'What NBA player was the sillouette for their logo?', correct: 'Jerry West', answers:['Wilt Chamberlain', 'Michael Jordan', 'Jerry West', 'Julius Erving']},
 		{question:'What company makes the official NBA basketball?', correct: 'Spalding', answers:['Champion', 'Spalding', 'Nike', 'Franklin Sports']},
-		{question:'What NBA team plays their games in Chicago?', correct: 'Bulls', answers:['Kings', 'Bucks', 'Bulls', 'Pistons']},
-		{question:'Which team has won the most NBA Championships?', correct: 'Boston Celtics', answers:['Los Angeles Lakers', 'San Antonio Spurs', 'New York Knicks', 'Boston Celtics']}
+		{question:'Which NBA team plays their games in Chicago?', correct: 'Bulls', answers:['Kings', 'Bucks', 'Bulls', 'Pistons']},
+		{question:"What basketball shot was seen as insulting to other players in the 1940s and 1950s?", correct: 'Slam Dunk', answers:['Three Point Shot', 'Slam Dunk', 'Layup', 'Free Throw']},
+		{question:'Which NBA player scored 100 points in one game?', correct: 'Wilt Chamberlain', answers:['Michael Jordan', 'Kobe Bryant', 'Bill Russell', 'Wilt Chamberlain']},
+		{question:'What is the maximum amount of games that can be played during the NBA finals?', correct: '7', answers:['4', '5', '6', '7']},
+		{question:'Which of these teams were originally based in Minnesota before relocating?', correct: 'Los Angeles Lakers', answers:['Los Angeles Lakers', 'Washington Wizards', 'New York Knicks', 'Memphis Grizzlies']},
+		{question:'How many teams are in the NBA currently?', correct: '30', answers:['26', '30', '32', '28']},
+		{question:'What other basketball league did the NBA merge with in 1976?', correct: 'ABA', answers:['NBDL', 'ABA', 'CBA', 'BSN']}
 	];
 
 	$scope.currentQuestion = 0;
@@ -46,9 +51,19 @@ demo.controller('ctrl', function($scope, score_total){
 		window.location.assign('http://localhost:8080/basketball-quiz/index.html#/quiz');
 	};
 
+/*
+	$scope.randomRange = function(min, max){
+		$scope.range = Number((max - min) + 1);
+		$scope.questNumber = Number(Math.round(Math.random() * $scope.range) + min);
+
+		console.log($scope.questNumber);
+		$scope.quizAnswers($scope.questNumber)
+	};
+*/
+
 	$scope.showQuestions = function(currentQuestion) {
 
-	    if ($scope.currentQuestion <= 4) {
+	    if ($scope.currentQuestion <= 9) {
 	    	$('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
 	    } else {
 	    	$('#currentQuestion').html("Question " + $scope.currentQuestion);
@@ -64,6 +79,9 @@ demo.controller('ctrl', function($scope, score_total){
 
 		$scope.answer = $(this).prop("item");
 		$scope.quizLength = $scope.questions.length - 1;
+		//$scope.prevQuestions = [];
+		//$scope.currentQuestion = $scope.questNumber;
+
 		$scope.correctAnswer = $scope.questions[$scope.currentQuestion].correct;
 		console.log($scope.answer);
 		$scope.test = $scope.questions[$scope.currentQuestion].correct;
@@ -73,7 +91,7 @@ demo.controller('ctrl', function($scope, score_total){
 
 	    // need to figure out how to add points if answer is correct
 	    if ($scope.answer === $scope.correctAnswer){
-	        $scope.points += 20;
+	        $scope.points += 10;
 	        console.log($scope.points);
 	        $("#result").html("Correct!");
 	        $("#result").css("color", "green");
@@ -99,14 +117,24 @@ demo.controller('ctrl', function($scope, score_total){
 	$scope.progressMade = function(answerCounter, points) {
 
 			if ($scope.answerCounter === 1) {
-				$("#progressBar").attr("value", "20");
+				$("#progressBar").attr("value", "10");
 			} else if ($scope.answerCounter === 2) {
-				$("#progressBar").attr("value", "40");
+				$("#progressBar").attr("value", "20");
 			} else if ($scope.answerCounter === 3) {
-				$("#progressBar").attr("value", "60");
+				$("#progressBar").attr("value", "30");
 			} else if ($scope.answerCounter === 4) {
-				$("#progressBar").attr("value", "80");
+				$("#progressBar").attr("value", "40");
 			} else if ($scope.answerCounter === 5) {
+				$("#progressBar").attr("value", "50");
+			}else if ($scope.answerCounter === 6) {
+				$("#progressBar").attr("value", "60");
+			}else if ($scope.answerCounter === 7) {
+				$("#progressBar").attr("value", "70");
+			}else if ($scope.answerCounter === 8) {
+				$("#progressBar").attr("value", "80");
+			}else if ($scope.answerCounter === 9) {
+				$("#progressBar").attr("value", "90");
+			}else if ($scope.answerCounter === 10) {
 				$("#progressBar").attr("value", "100");
 				$("#checkScore").show();
 			}
@@ -135,5 +163,7 @@ demo.factory('list', function($http){
               })
             };
 }); // end of list
+
+
 
 */
