@@ -47,7 +47,7 @@ demo.controller('ctrl', function($scope, score_total){
 	$scope.scoreTotal = score_total.data.final_score;
 
 	$scope.startOver = function() {
-		window.location.assign('http://localhost:8080/basketball-quiz/index.html#/quiz');
+		window.location.assign('/basketball-quiz/index.html#/quiz');
 	};
 
 /*
