@@ -2,29 +2,29 @@
 var demo = angular.module('demo', ['ngRoute']);
 
 demo.config(['$routeProvider', function($routeProvider){
-            $routeProvider.when('/', {
-              templateUrl: 'intro.html',
-              controller: 'ctrl'
-            })
-            .when('/quiz', {
-              templateUrl: 'quiz.html',
-              controller: 'ctrl'
-            })
-            .when('/score', {
-              templateUrl: 'score.html',
-              controller: 'ctrl'
-            })
-            .otherwise('/error',  {
-              template: '<p>Error - Page Not Found</p>'
-            });
+    $routeProvider.when('/', {
+        templateUrl: 'intro.html',
+        controller: 'ctrl'
+    })
+    .when('/quiz', {
+        templateUrl: 'quiz.html',
+        controller: 'ctrl'
+    })
+    .when('/score', {
+        templateUrl: 'score.html',
+        controller: 'ctrl'
+    })
+    .otherwise('/error',  {
+        template: '<p>Error - Page Not Found</p>'
+    });
 }])// end of promises and routes
 demo.factory('score_total', function() {
-		//shows the user there final score
-		return {
-				data: {
-					final_score: 0
-				}
+	//shows the user there final score
+	return {
+		data: {
+			final_score: 0
 		}
+	}
 
 }) // end of factory
 demo.controller('ctrl', function($scope, score_total){
@@ -50,16 +50,6 @@ demo.controller('ctrl', function($scope, score_total){
 		window.location.assign('/basketball-quiz/index.html#/quiz');
 	};
 
-/*
-	$scope.randomRange = function(min, max){
-		$scope.range = Number((max - min) + 1);
-		$scope.questNumber = Number(Math.round(Math.random() * $scope.range) + min);
-
-		console.log($scope.questNumber);
-		$scope.quizAnswers($scope.questNumber)
-	};
-*/
-
 	$scope.showQuestions = function(currentQuestion) {
 
 	    if ($scope.currentQuestion <= 9) {
@@ -70,28 +60,21 @@ demo.controller('ctrl', function($scope, score_total){
 
 	    $('#question').html($scope.questions[$scope.currentQuestion].question);
 	    $scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
-	    console.log($scope.currentAnswers);
-	    console.log($scope.currentQuestion);
 	};
 
 	$scope.quizAnswers = function() {
 
 		$scope.answer = $(this).prop("item");
 		$scope.quizLength = $scope.questions.length - 1;
-		//$scope.prevQuestions = [];
-		//$scope.currentQuestion = $scope.questNumber;
 
 		$scope.correctAnswer = $scope.questions[$scope.currentQuestion].correct;
-		console.log($scope.answer);
 		$scope.test = $scope.questions[$scope.currentQuestion].correct;
-		console.log($scope.test);
 
 	    $("#result").show();
 
 	    // need to figure out how to add points if answer is correct
 	    if ($scope.answer === $scope.correctAnswer){
 	        $scope.points += 10;
-	        console.log($scope.points);
 	        $("#result").html("Correct!");
 	        $("#result").css("color", "green");
 	    } else {
@@ -107,62 +90,38 @@ demo.controller('ctrl', function($scope, score_total){
 		} else {
 			$scope.answerCounter = $scope.quizLength + 1;
 		}
-
-		console.log($scope.points);
-		console.log($scope.answerCounter);
 	    $scope.progressMade($scope.answerCounter, $scope.points);
 	};
 
 	$scope.progressMade = function(answerCounter, points) {
 
-			if ($scope.answerCounter === 1) {
-				$("#progressBar").attr("value", "10");
-			} else if ($scope.answerCounter === 2) {
-				$("#progressBar").attr("value", "20");
-			} else if ($scope.answerCounter === 3) {
-				$("#progressBar").attr("value", "30");
-			} else if ($scope.answerCounter === 4) {
-				$("#progressBar").attr("value", "40");
-			} else if ($scope.answerCounter === 5) {
-				$("#progressBar").attr("value", "50");
-			}else if ($scope.answerCounter === 6) {
-				$("#progressBar").attr("value", "60");
-			}else if ($scope.answerCounter === 7) {
-				$("#progressBar").attr("value", "70");
-			}else if ($scope.answerCounter === 8) {
-				$("#progressBar").attr("value", "80");
-			}else if ($scope.answerCounter === 9) {
-				$("#progressBar").attr("value", "90");
-			}else if ($scope.answerCounter === 10) {
-				$("#progressBar").attr("value", "100");
-				$("#checkScore").show();
-			}
-			$scope.score($scope.points);
+		if ($scope.answerCounter === 1) {
+			$("#progressBar").attr("value", "10");
+		} else if ($scope.answerCounter === 2) {
+			$("#progressBar").attr("value", "20");
+		} else if ($scope.answerCounter === 3) {
+			$("#progressBar").attr("value", "30");
+		} else if ($scope.answerCounter === 4) {
+			$("#progressBar").attr("value", "40");
+		} else if ($scope.answerCounter === 5) {
+			$("#progressBar").attr("value", "50");
+		} else if ($scope.answerCounter === 6) {
+			$("#progressBar").attr("value", "60");
+		} else if ($scope.answerCounter === 7) {
+			$("#progressBar").attr("value", "70");
+		} else if ($scope.answerCounter === 8) {
+			$("#progressBar").attr("value", "80");
+		} else if ($scope.answerCounter === 9) {
+			$("#progressBar").attr("value", "90");
+		} else if ($scope.answerCounter === 10) {
+			$("#progressBar").attr("value", "100");
+			$("#checkScore").show();
+		}
+		$scope.score($scope.points);
 	};
 
 	$scope.score = function(points) {
 		score_total.data.final_score = $scope.points;
 	};
 
-	console.log($scope.scoreTotal);
-
 });
-
-
-/*
-
-// gets country listing
-demo.factory('list', function($http){
-            return function(){
-              return $http ({ 
-                cache: true,
-                method: 'JSONP', 
-                url: 'http://api.geonames.org/countryInfoJSON?username=mse2335',
-                params: {callback: 'JSON_CALLBACK'}
-              })
-            };
-}); // end of list
-
-
-
-*/
