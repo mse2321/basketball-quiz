@@ -44,6 +44,7 @@ demo.controller('ctrl', function($scope, score_total){
 	$scope.scoreTotal = score_total.data.final_score;
 	$scope.showResult = false;
 	$scope.showScore = false;
+	$scope.progressTracker = 10;
 
 	$scope.startOver = function() {
 		window.location.assign('/basketball-quiz/index.html#/quiz');
@@ -63,64 +64,44 @@ demo.controller('ctrl', function($scope, score_total){
 	$scope.quizAnswers = function() {
 		$scope.answer = this["item"];
 		$scope.quizLength = $scope.questions.length - 1;
-
+		$scope.selectResult = document.querySelector("#result");
 		$scope.correctAnswer = $scope.questions[$scope.currentQuestion].correct;
 		$scope.test = $scope.questions[$scope.currentQuestion].correct;
-
 	   	$scope.showResult = true;
 	    
 	    if ($scope.answer === $scope.correctAnswer){
 	        $scope.points += 10;
-	        document.querySelector("#result").innerText = "Correct!";
-	        document.querySelector("#result").style.color = "green";
+	        $scope.selectResult.innerText = "Correct!";
+	        $scope.selectResult.style.color = "green";
 	    } else {
 	    	$scope.points += 0;
-	        document.querySelector("#result").innerText = "Wrong!";
-	        document.querySelector("#result").style.color = "red";
+	        $scope.selectResult.innerText = "Wrong!";
+	        $scope.selectResult.style.color = "red";
 	    };
-
 		if ($scope.currentQuestion < $scope.quizLength) {
 			$scope.currentQuestion += 1;
 			$scope.answerCounter = $scope.currentQuestion;
 			$scope.showQuestions($scope.currentQuestion);
 		} else {
 			$scope.answerCounter = $scope.quizLength + 1;
-		}
+		};
 	    $scope.progressMade($scope.answerCounter, $scope.points);
 	};
 
 	$scope.progressMade = function(answerCounter, points) {
-		if ($scope.answerCounter === 1) {
-			document.querySelector("#progressBar").setAttribute("value", "10");
-		} else if ($scope.answerCounter === 2) {
-			document.querySelector("#progressBar").setAttribute("value", "20");
-		} else if ($scope.answerCounter === 3) {
-			document.querySelector("#progressBar").setAttribute("value", "30");
-		} else if ($scope.answerCounter === 4) {
-			document.querySelector("#progressBar").setAttribute("value", "40");
-		} else if ($scope.answerCounter === 5) {
-			document.querySelector("#progressBar").setAttribute("value", "50");
-		} else if ($scope.answerCounter === 6) {
-			document.querySelector("#progressBar").setAttribute("value", "60");
-		} else if ($scope.answerCounter === 7) {
-			document.querySelector("#progressBar").setAttribute("value", "70");
-		} else if ($scope.answerCounter === 8) {
-			document.querySelector("#progressBar").setAttribute("value", "80");
-		} else if ($scope.answerCounter === 9) {
-			document.querySelector("#progressBar").setAttribute("value", "90");
-		} else if ($scope.answerCounter === 10) {
-			document.querySelector("#progressBar").setAttribute("value", "100");
-			$scope.showScore = true;
-		}
-		$scope.score($scope.points);
-
-		/* for(i = 0; i < $scope.answerCounter; i++){
+		for(i = 0; i < $scope.answerCounter; i++){
+			if(($scope.answerCounter - i) > 1) {
+				i = $scope.answerCounter - 1;
+			}
 			$scope.progressTracker += 10;
 			document.querySelector("#progressBar").setAttribute("value", $scope.progressTracker);
-		} 
-		$scope.showScore = true;
-		$scope.score($scope.points);
-		*/
+			console.log($scope.progressTracker);
+		};
+		if ($scope.answerCounter === 10) {
+			$scope.showScore = true;
+			$scope.score($scope.points);
+		};
+		
 	};
 
 	$scope.score = function(points) {
