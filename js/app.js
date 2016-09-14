@@ -25,10 +25,8 @@ demo.factory('score_total', function() {
 			final_score: 0
 		}
 	}
-
 }) // end of factory
 demo.controller('ctrl', function($scope, score_total){
-
 	$scope.questions = [
 		{question:'Which of this teams has NOT won an NBA Championship?', correct: 'Orlando Magic', answers:['Orlando Magic', 'Boston Celtics', 'Houston Rockets', 'Dallas Mavericks']},
 		{question:'What NBA player was the sillouette for their logo?', correct: 'Jerry West', answers:['Wilt Chamberlain', 'Michael Jordan', 'Jerry West', 'Julius Erving']},
@@ -41,46 +39,44 @@ demo.controller('ctrl', function($scope, score_total){
 		{question:'How many teams are in the NBA currently?', correct: '30', answers:['26', '30', '32', '28']},
 		{question:'What other basketball league did the NBA merge with in 1976?', correct: 'ABA', answers:['NBDL', 'ABA', 'CBA', 'BSN']}
 	];
-
 	$scope.currentQuestion = 0;
 	$scope.points = 0;
 	$scope.scoreTotal = score_total.data.final_score;
+	$scope.showResult = false;
+	$scope.showScore = false;
 
 	$scope.startOver = function() {
 		window.location.assign('/basketball-quiz/index.html#/quiz');
 	};
 
 	$scope.showQuestions = function(currentQuestion) {
-
 	    if ($scope.currentQuestion <= 9) {
-	    	$('#currentQuestion').html("Question " + ($scope.currentQuestion + 1));
+	    	document.querySelector("#currentQuestion").innerText = "Question " + ($scope.currentQuestion + 1) + "";
 	    } else {
-	    	$('#currentQuestion').html("Question " + $scope.currentQuestion);
+	    	document.querySelector("#currentQuestion").innerText = "Question " + $scope.currentQuestion + "";
 	    };
-
-	    $('#question').html($scope.questions[$scope.currentQuestion].question);
-	    $scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
+	   	document.querySelector("#question").innerText = $scope.questions[$scope.currentQuestion].question;
+	   	$scope.currentAnswers = $scope.questions[$scope.currentQuestion].answers;
 	};
 
+	//remove jQuery
 	$scope.quizAnswers = function() {
-
-		$scope.answer = $(this).prop("item");
+		$scope.answer = this["item"];
 		$scope.quizLength = $scope.questions.length - 1;
 
 		$scope.correctAnswer = $scope.questions[$scope.currentQuestion].correct;
 		$scope.test = $scope.questions[$scope.currentQuestion].correct;
 
-	    $("#result").show();
-
-	    // need to figure out how to add points if answer is correct
+	   	$scope.showResult = true;
+	    
 	    if ($scope.answer === $scope.correctAnswer){
 	        $scope.points += 10;
-	        $("#result").html("Correct!");
-	        $("#result").css("color", "green");
+	        document.querySelector("#result").innerText = "Correct!";
+	        document.querySelector("#result").style.color = "green";
 	    } else {
 	    	$scope.points += 0;
-	        $("#result").html("Wrong!");
-	        $("#result").css("color", "red");
+	        document.querySelector("#result").innerText = "Wrong!";
+	        document.querySelector("#result").style.color = "red";
 	    };
 
 		if ($scope.currentQuestion < $scope.quizLength) {
@@ -94,30 +90,37 @@ demo.controller('ctrl', function($scope, score_total){
 	};
 
 	$scope.progressMade = function(answerCounter, points) {
-
 		if ($scope.answerCounter === 1) {
-			$("#progressBar").attr("value", "10");
+			document.querySelector("#progressBar").setAttribute("value", "10");
 		} else if ($scope.answerCounter === 2) {
-			$("#progressBar").attr("value", "20");
+			document.querySelector("#progressBar").setAttribute("value", "20");
 		} else if ($scope.answerCounter === 3) {
-			$("#progressBar").attr("value", "30");
+			document.querySelector("#progressBar").setAttribute("value", "30");
 		} else if ($scope.answerCounter === 4) {
-			$("#progressBar").attr("value", "40");
+			document.querySelector("#progressBar").setAttribute("value", "40");
 		} else if ($scope.answerCounter === 5) {
-			$("#progressBar").attr("value", "50");
+			document.querySelector("#progressBar").setAttribute("value", "50");
 		} else if ($scope.answerCounter === 6) {
-			$("#progressBar").attr("value", "60");
+			document.querySelector("#progressBar").setAttribute("value", "60");
 		} else if ($scope.answerCounter === 7) {
-			$("#progressBar").attr("value", "70");
+			document.querySelector("#progressBar").setAttribute("value", "70");
 		} else if ($scope.answerCounter === 8) {
-			$("#progressBar").attr("value", "80");
+			document.querySelector("#progressBar").setAttribute("value", "80");
 		} else if ($scope.answerCounter === 9) {
-			$("#progressBar").attr("value", "90");
+			document.querySelector("#progressBar").setAttribute("value", "90");
 		} else if ($scope.answerCounter === 10) {
-			$("#progressBar").attr("value", "100");
-			$("#checkScore").show();
+			document.querySelector("#progressBar").setAttribute("value", "100");
+			$scope.showScore = true;
 		}
 		$scope.score($scope.points);
+
+		/* for(i = 0; i < $scope.answerCounter; i++){
+			$scope.progressTracker += 10;
+			document.querySelector("#progressBar").setAttribute("value", $scope.progressTracker);
+		} 
+		$scope.showScore = true;
+		$scope.score($scope.points);
+		*/
 	};
 
 	$scope.score = function(points) {

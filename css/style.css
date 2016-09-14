@@ -100,7 +100,7 @@ button {
 	width: 50%;
 	height: 50%;
 	font-size: 20em;
-	margin: 0 auto;
+	margin: 0px auto 50px;
 }
 
 #scoreboard {
@@ -129,14 +129,10 @@ button {
     border-radius: .8em;
     cursor: pointer;
     padding: 20px;
-    margin: 0px auto 60px;
+    margin: 20px auto 60px;
     font-size: 24px;
     font-weight: bold;
     color: white;
-}
-
-#checkScore {
-	display: none;
 }
 
 #restart:hover, #checkScore:hover {
@@ -170,7 +166,6 @@ section#score h3{
 	margin: 1em auto 0 auto;
 	width: 20%;
 	padding: 10px;
-	display: none;
 }
 
 .wrongAnswer {

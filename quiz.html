@@ -10,7 +10,7 @@
 				<input type="radio" name="answer" value="{{ item }}" ng-click="quizAnswers()">&nbsp;{{ item }}
 			</li>
 		</ul>
-		<h3 id="result"></h3>
-		<a href="#/score"><button id="checkScore">View Score</button></a>
+		<h3 id="result" ng-show="showResult"></h3>
+		<a href="#/score"><button id="checkScore" ng-show="showScore">View Score</button></a>
 	</div>
 </div>
