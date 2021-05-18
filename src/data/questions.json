@@ -1,0 +1,54 @@
+{
+    "questions" : [
+		{
+            "question": "Which of this teams has NOT won an NBA Championship?", 
+            "correctAnswer":  "Orlando Magic", 
+            "answers": ["Orlando Magic", "Boston Celtics", "Houston Rockets", "Dallas Mavericks"]
+        },
+		{
+            "question": "What NBA player was the sillouette for their logo?", 
+            "correctAnswer": "Jerry West", 
+            "answers": ["Wilt Chamberlain", "Michael Jordan", "Jerry West", "Julius Erving"]
+        },
+		{
+            "question":"What company makes the official NBA basketball?", 
+            "correctAnswer": "Spalding", 
+            "answers": ["Champion", "Spalding", "Nike", "Franklin Sports"]
+        },
+		{
+            "question": "Which NBA team plays their games in Chicago?", 
+            "correctAnswer": "Bulls", 
+            "answers": ["Kings", "Bucks", "Bulls", "Pistons"]
+        },
+		{
+            "question": "What basketball shot was seen as insulting to other players in the 1940s and 1950s?", 
+            "correctAnswer": "Slam Dunk", 
+            "answers" :["Three Point Shot", "Slam Dunk", "Layup", "Free Throw"]
+        },
+		{
+            "question" :"Which NBA player scored 100 points in one game?", 
+            "correctAnswer": "Wilt Chamberlain", 
+            "answers" :["Michael Jordan", "Kobe Bryant", "Bill Russell", "Wilt Chamberlain"]
+        },
+		{
+            "question" :"What is the maximum amount of games that can be played during the NBA finals?", 
+            "correctAnswer": "7", 
+            "answers" :["4", "5", "6", "7"]
+        },
+		{
+            "question" :"Which of these teams were originally based in Minnesota before relocating?", 
+            "correctAnswer": "Los Angeles Lakers", 
+            "answers" :["Los Angeles Lakers", "Washington Wizards", "New York Knicks", "Memphis Grizzlies"]
+        },
+		{
+            "question":"How many teams are in the NBA currently?", 
+            "correctAnswer": "30", 
+            "answers": ["26", "30", "32", "28"]
+        },
+		{
+            "question" :"What other basketball league did the NBA merge with in 1976?", 
+            "correctAnswer": "ABA", 
+            "answers": ["NBDL", "ABA", "CBA", "BSN"]
+        }
+	]
+}

@@ -1,11 +1,15 @@
+const Score = (props) => {
+    const { 
+        newScore,
+        startOverFunc 
+    } = props;
 
-const Score = () => {
     return (
         <div id="score">
             <div id="mobile_menu">
                 <h4 id="scoreTitle">Your Score</h4>
-                <div class="container scoreDisplay" id="actualScore"><p>{{ scoreTotal }}</p></div>
-                <a id="restart" ng-click="startOver()">Start Over?</a>
+                <div className="container scoreDisplay" id="actualScore"><p>{newScore}</p></div>
+                <button id="restart" onClick={() => startOverFunc()}>Start Over?</button>
             </div>
         </div>
     );
