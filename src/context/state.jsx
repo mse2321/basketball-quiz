@@ -8,12 +8,15 @@ const useStateContext = () => useContext(StateContext);
 
 const StateProvider = ({ children }) => {
     const [currentQuestion, setCurrentQuestion] = useState(quizQuestions.questions[0]);
-    const [questions] = useState(quizQuestions);
+    const [score, setScore] = useState(0);
+    const [questions] = useState(quizQuestions.questions);
 
     const defaultContext = {
         questions,
         currentQuestion,
-        setCurrentQuestion
+        score,
+        setCurrentQuestion,
+        setScore
     };
 
     return (

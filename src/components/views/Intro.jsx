@@ -1,3 +1,4 @@
+import { Button  } from 'react-bootstrap';
 
 const Intro = (props) => {
   const { 
@@ -15,7 +16,7 @@ const Intro = (props) => {
         <div className="container">
             <h2>Get ready to take the quiz!</h2>
             <p>See how much you know about the NBA. Click below to see how you do.</p>
-            <button id="quiz-start" onClick={() => startQuiz()}>Start</button>
+            <Button id="quiz-start" onClick={() => startQuiz()}>Start</Button>
         </div>
     </div>
   );

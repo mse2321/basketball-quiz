@@ -10,7 +10,7 @@ const App = () => {
     <Container fluid>
       <Row id="content_wrap">
         <StateProvider>
-          <Col xs={12} xl={7}>
+          <Col xs={12} md={12} lg={12} xl={12}>
             <Header />
             <ViewContainer />
           </Col>
