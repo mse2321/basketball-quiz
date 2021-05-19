@@ -31,6 +31,7 @@ const Quiz = (props) => {
         const updatedIndex = newIndex + 1;
         if(newIndex < questions.length) {
             setNewIndex(updatedIndex);
+            // TODO - do I really need this?
             setCurrentQuestion(questions[newIndex]);
         }  
 
