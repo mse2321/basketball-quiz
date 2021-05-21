@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-a, a:active, a:focus, a:hover { text-decoration: none; }
+a, a:active, a:focus, a:hover 	{ text-decoration: none; }
 
 body { 
 	font-family: $font-family-body; 
@@ -19,24 +19,24 @@ body {
 }
 
 h1 { 
-	font-size: $base-unit * 4;
+	font-size: $base-font-unit * 4;
 	font-weight: bold;
 	color: #546E7A;
 	margin: $base-unit * 1.5;	
 }
 
 h2 {
-	font-size: $base-unit * 3;
-	margin-top: 4em;
+	font-size: $base-font-unit * 3;
+	margin-top: $base-unit * 4;
 }
 
-h4 { margin: 20px auto; }
+h4 								{ margin: $base-unit * 2 auto; }
 
 footer {
 	color: #546E7A;
 	position: absolute;
     left: 46%;
-    bottom: 10px;
+    bottom: $base-unit;
     display: none;
 }
 
@@ -51,7 +51,7 @@ ul {
 	text-align: left;
 }
 
-#quiz { width: 100%; }
+#quiz 							{ width: 100%; }
 
 #quiz > .quiz-container {
 	background-color: #1E88E5;
@@ -63,51 +63,51 @@ ul {
 
 #quiz-start {
 	background-color: #F4511E;
-	padding: $base-unit * 1.6 4em;
-	font-size: 1.4em;
+	padding: $base-unit * 1.6 $base-unit * 4;
+	font-size: $base-font-unit * 1.4;
 	font-weight: bold;
-	border-radius: .5em;
-	margin-top: 3em;
-	margin-bottom: 10em;
-	box-shadow: 5px 5px 5px #263238;
-	border: 2px solid #FF8A65;
+	border-radius: $base-unit * 0.5;
+	margin-top: $base-unit * 3;
+	margin-bottom: $base-unit * 10;
+	box-shadow: $base-unit * 0.5 $base-unit * 0.5 $base-unit * 0.5 #263238;
+	border: $base-unit * 0.2 solid #FF8A65;
 	color: white;
 }
 
 #question {
-	font-size: 1.2em;
-	margin-top: 1em;
-	padding: 0px 30px;
+	font-size: $base-font-unit * 1.2;
+	margin-top: $base-unit * 2;
+	padding: 0 $base-unit * 3;
 }
 
-button { border: none; }
+button 							{ border: none; }
 
 .answer button {
 	list-style-type: none;
 	display: inline;
-	font-size: 1.5em;
-	margin: 0em 8em;
-	padding: 5px 10px;
+	font-size: $base-font-unit * 1.5;
+	margin: 0 $base-unit * 8;
+	padding: $base-unit * 0.5 $base-unit;
 	text-align: center;
 }
 
-#answers li, input 	{ cursor: pointer;}
+#answers li, input 				{ cursor: pointer; }
 
-#intro 				{ color: #546E7A; }
+#intro 							{ color: #546E7A; }
 
 .scoreDisplay{
 	background-color: black;
 	color: red;
-	border: 5px solid #546E7A;
+	border: $base-unit * 0.5 solid #546E7A;
 	width: 50%;
 	height: 50%;
-	font-size: 20em;
-	margin: 0px auto 50px;
+	font-size: $base-font-unit * 20;
+	margin: 0 auto $base-unit * 5;
 }
 
 #scoreboard {
 	position: absolute;
-	top: 15px;
+	top: $base-unit * 0.5;
 	right: 0;
 	width: 30%;
 }
@@ -122,17 +122,17 @@ button { border: none; }
 
 #scoreTitle {
 	color: red;
-	font-size: 40px;
+	font-size: $base-font-unit * 4;
 }
 
 #restart, #checkScore {
-	width: 250px;
+	width: $base-unit * 5;
     background-color: #546E7A;
-    border-radius: .8em;
+    border-radius: $base-unit * 0.8;
     cursor: pointer;
-    padding: 20px;
-    margin: 20px auto 60px;
-    font-size: 24px;
+    padding: $base-unit * 2;
+    margin: $base-unit * 2 auto $base-unit * 6;
+    font-size: $base-font-unit * 2;
     font-weight: bold;
     color: white;
 }
@@ -143,18 +143,18 @@ button { border: none; }
 }
 
 section#score h3{
-	font-size: 1em;
-	margin-bottom: .5em;
+	font-size: $base-unit * 2;
+	margin-bottom: $base-unit * 0.5;
 }
 
 #mobile_menu {
 	background-color: black;
 	position: absolute;
-	top: 122px;
+	top: $base-unit * 12.2;
     bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 10px;
+	padding: $base-unit;
 	z-index: 1000;
 }
 
@@ -165,9 +165,9 @@ section#score h3{
 
 #result {
 	background-color: black;
-	margin: 1em auto 0 auto;
+	margin: $base-unit * 2 auto 0 auto;
 	width: 20%;
-	padding: 10px;
+	padding: $base-unit;
 }
 
 .wrongAnswer {
@@ -175,13 +175,13 @@ section#score h3{
 	font-weight: bold;
 }
 
-.rightAnswerButton { background-color: green; }
+.rightAnswerButton 		{ background-color: green; }
 
 #score {
-	margin-top: 2em;
-	border-top: 2px dashed white;
-	height: 40px;
-	padding-bottom: 20px;
+	margin-top: $base-unit * 2;
+	border-top: $base-unit * 0.2 dashed white;
+	height: $base-unit * 4;
+	padding-bottom: $base-unit * 2;
 }
 
-#actualScore { font-family: 'VT323', sans-serif; }
+#actualScore 			{ font-family: 'VT323', sans-serif; }

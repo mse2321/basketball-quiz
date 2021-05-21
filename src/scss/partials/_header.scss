@@ -1,9 +1,9 @@
 .fa-info-circle { 
 	position: absolute; 
 	cursor: pointer; 
-	top: 20px; 
-	right: 20px; 
+	top: $base-unit * 2; 
+	right: $base-unit * 2;
 	z-index: 1000; 
 	color: #90A4AE; 
-	font-size: 40px; 
+	font-size: $base-font-unit * 4; 
 }
