@@ -1,0 +1,26 @@
+#intro {
+    color: #546E7A;
+    .container {
+        padding-top: $base-unit * 6;
+    }
+
+    p {
+        font-size: $base-font-unit * 1.1;
+    }
+
+    #quiz-start {
+        background-color: #F4511E;
+        padding: $base-unit $base-unit * 4;
+        font-size: $base-font-unit * 1.6;
+        border-radius: $base-unit * 0.5;
+        margin-top: $base-unit * 3;
+        margin-bottom: $base-unit * 10;
+        box-shadow: $base-unit * 0.5 $base-unit * 0.5 $base-unit * 0.5 #263238;
+        border: $base-unit * 0.2 solid #FF8A65;
+        color: white;
+
+        &:hover {
+            background-color: #546E7A;
+        }
+    }
+}

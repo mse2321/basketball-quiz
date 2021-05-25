@@ -7,8 +7,8 @@ const Score = (props) => {
     return (
         <div id="score">
             <div id="mobile_menu">
-                <h4 id="scoreTitle">Your Score</h4>
-                <div className="container scoreDisplay" id="actualScore"><p>{newScore}</p></div>
+                <span id="scoreTitle">Your Score</span>
+                <div className="scoreDisplay" id="actualScore">{newScore}</div>
                 <button id="restart" onClick={() => startOverFunc()}>Start Over?</button>
             </div>
         </div>

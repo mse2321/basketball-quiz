@@ -1,0 +1,79 @@
+#quiz {
+    width: 100%;
+
+    li {
+        list-style-type: none;
+        line-height: $base-unit * 1.6;
+    }
+    
+    ul {
+        padding: $base-unit * 1.6;
+        margin-left: 44%;
+        text-align: left;
+    }
+    
+    .correct {
+        color: green;
+        font-weight: bold;
+        font-size: $base-font-unit * 2;
+    }
+    
+    #result {
+        background-color: black;
+        margin: $base-unit * 2 auto 0 auto;
+        width: 20%;
+        padding: $base-unit;
+    }
+    
+    .wrong {
+        color: red;
+        font-weight: bold;
+        font-size: $base-font-unit * 2;
+    }
+    
+    .rightAnswerButton 		{ background-color: green; }
+
+    .answer button {
+        list-style-type: none;
+        display: inline;
+        font-size: $base-font-unit * 1.5;
+        margin: 0 $base-unit * 8;
+        padding: $base-unit * 0.5 $base-unit;
+        text-align: center;
+    }
+    
+    input 				{ cursor: pointer; }
+
+    #answers {
+        label, input { font-size: $base-font-unit * 1.2; }
+    }
+
+    .quiz-container {
+        background-color: #1E88E5;
+        border-top: $base-unit solid white;
+        border-bottom: $base-unit solid white;
+        padding: $base-unit * 5;
+        margin-top: $base-unit * 2.5;
+
+        button {
+            background-color: #F4511E;
+            padding: $base-unit $base-unit * 2;
+            font-size: $base-font-unit * 1.2;
+            border-radius: $base-unit * 0.5;
+            box-shadow: $base-unit * 0.3 $base-unit * 0.3 $base-unit * 0.3 #263238;
+            margin-top: $base-unit * 2;
+            border: $base-unit * 0.2 solid #FF8A65;
+
+            &:hover {
+                background-color: #546E7A;
+            }
+        }
+    }
+
+    #question {
+        font-size: $base-font-unit * 1.2;
+        margin-top: $base-unit * 2;
+        padding: 0 $base-unit * 3;
+    }
+    
+}

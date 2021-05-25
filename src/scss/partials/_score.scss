@@ -1,0 +1,49 @@
+#score {
+    .scoreDisplay{
+        background-color: black;
+        color: red;
+        border: $base-unit * 0.5 solid #546E7A;
+        font-size: $base-font-unit * 10;
+        width: 20%;
+        margin: auto;
+    }
+    
+    #scoreTitle {
+        color: red;
+        font-size: $base-font-unit * 3;
+    }
+    
+    section#score h3{
+        font-size: $base-unit * 2;
+        margin-bottom: $base-unit * 0.5;
+    }
+    
+    #mobile_menu {
+        background-color: black;
+        padding: $base-unit;
+        z-index: 1000;
+    }
+    
+    #score {
+        margin-top: $base-unit * 2;
+        border-top: $base-unit * 0.2 dashed white;
+        height: $base-unit * 4;
+        padding-bottom: $base-unit * 2;
+    }
+
+    button {
+        background-color: #F4511E;
+        padding: $base-unit $base-unit * 2;
+        font-size: $base-font-unit * 1.2;
+        border-radius: $base-unit * 0.5;
+        box-shadow: $base-unit * 0.3 $base-unit * 0.3 $base-unit * 0.3 #263238;
+        margin: $base-unit * 2 auto;
+        border: $base-unit * 0.2 solid #FF8A65;
+        color: white;
+
+        &:hover {
+            background-color: #546E7A;
+        }
+    }
+        
+}

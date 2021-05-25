@@ -1,7 +1,7 @@
 import React , { useState, useEffect } from "react";
 import _ from 'lodash';
 import { useStateContext } from '../../context/state';
-import { Button, FormControl, InputGroup, ProgressBar, Form  } from 'react-bootstrap';
+import { Button, ProgressBar, Form  } from 'react-bootstrap';
 
 const Quiz = (props) => {
     const { 
@@ -63,11 +63,11 @@ const Quiz = (props) => {
     return (
         <div id="quiz">
             <div className="quiz-container">
-                <ProgressBar id="progressBar" now={progress} max="100" srOnly /> 
+                <ProgressBar id="progressBar" now={progress} max="100" srOnly variant="warning" /> 
                 <div className="quiz-content">
                     {
                         <React.Fragment>
-                            <h4 id="currentQuestion">{'Question ' + (newIndex + 1)}</h4>
+                            <h3 id="currentQuestion">{'Question ' + (newIndex + 1)}</h3>
                             <p id="question">{currentQuestion.question}</p>
 
                             <Form>
@@ -94,7 +94,7 @@ const Quiz = (props) => {
                 
                     {
                        showAnswerFeedback && (gotRightAnswer ? <h3 id="result"><span className="correct">Correct</span></h3> : 
-                       <h3 id="result"><span className="wrong">Wrong</span></h3>)
+                       <div id="result"><span className="wrong">Wrong</span></div>)
                     }
                 {
                     newIndex === (questions.length - 1) && showAnswerFeedback ? 
