@@ -49,7 +49,7 @@ const Quiz = (props) => {
             setGotRightAnswer(false); 
         };
 
-        progress < 100 && setProgress(progress + 10);
+        progress < 90 ? setProgress(progress + 10) : setProgress(100);
         setShowAnswerFeedback(true);
 
         return answer;
@@ -91,11 +91,16 @@ const Quiz = (props) => {
                         </React.Fragment>
                     }
                 </div>
-                
-                    {
-                       showAnswerFeedback && (gotRightAnswer ? <h3 id="result"><span className="correct">Correct</span></h3> : 
-                       <div id="result"><span className="wrong">Wrong</span></div>)
-                    }
+                <div id="result">
+                    <h4>Results</h4>
+                    <div className="answer_result">
+                        {
+                            showAnswerFeedback && (
+                                gotRightAnswer ? <span className="correct">Correct</span> : <span className="wrong">Wrong</span>
+                            )
+                        }
+                    </div>
+                </div>
                 {
                     newIndex === (questions.length - 1) && showAnswerFeedback ? 
                         <Button id="checkScore" onClick={() => viewScore()}>View Score</Button> :

@@ -19,21 +19,26 @@ body {
 }
 
 h1 { 
-	font-size: $base-font-unit * 4;
+	font-size: $base-font-unit * 3;
 	font-weight: bold;
 	color: #546E7A;
-	margin: $base-unit * 1.5;	
+	margin-top: $base-unit;	
 }
 
 h2 {
-	font-size: $base-font-unit * 3;
+	font-size: $base-font-unit * 2.5;
 	margin-top: $base-unit * 4;
 }
 
 h3 { 
 	margin: $base-unit * 2 auto; 
-	font-size: $base-unit * 2.5;
+	font-size: $base-unit * 2;
 	font-weight: bold;
+}
+
+h4 { 
+	margin: $base-unit * 0.5 auto; 
+	font-size: $base-unit * 1.5;
 }
 
 footer {

@@ -8,27 +8,25 @@
     
     ul {
         padding: $base-unit * 1.6;
-        margin-left: 44%;
         text-align: left;
+        margin-bottom: 0;
     }
     
     .correct {
         color: green;
-        font-weight: bold;
-        font-size: $base-font-unit * 2;
+        font-size: $base-font-unit * 1.5;
     }
     
-    #result {
+    .answer_result {
         background-color: black;
-        margin: $base-unit * 2 auto 0 auto;
-        width: 20%;
-        padding: $base-unit;
+        margin: 0 auto;
+        height: $base-unit * 3.5;
+        padding: $base-unit * 0.5 0;
     }
     
     .wrong {
         color: red;
-        font-weight: bold;
-        font-size: $base-font-unit * 2;
+        font-size: $base-font-unit * 1.5;
     }
     
     .rightAnswerButton 		{ background-color: green; }
@@ -52,8 +50,8 @@
         background-color: #1E88E5;
         border-top: $base-unit solid white;
         border-bottom: $base-unit solid white;
-        padding: $base-unit * 5;
-        margin-top: $base-unit * 2.5;
+        padding: $base-unit * 3;
+        margin-top: $base-unit;
 
         button {
             background-color: #F4511E;
@@ -73,7 +71,6 @@
     #question {
         font-size: $base-font-unit * 1.2;
         margin-top: $base-unit * 2;
-        padding: 0 $base-unit * 3;
     }
     
 }

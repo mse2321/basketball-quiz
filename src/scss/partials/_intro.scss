@@ -1,12 +1,7 @@
 #intro {
     color: #546E7A;
-    .container {
-        padding-top: $base-unit * 6;
-    }
 
-    p {
-        font-size: $base-font-unit * 1.1;
-    }
+    p           {  font-size: $base-font-unit * 1.2; }
 
     #quiz-start {
         background-color: #F4511E;
