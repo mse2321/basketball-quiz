@@ -2,7 +2,6 @@ import Header from './layout/Header';
 import ViewContainer from './views/ViewContainer';
 //import Footer from './layout/Footer';
 import { Container, Row, Col } from 'react-bootstrap';
-import '../scss/styles.scss';
 import { StateProvider } from '../context/state';
 
 const App = () => {
